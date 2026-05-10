@@ -4,9 +4,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stranica za prodaju računara i preporuku PC komponenti</title>
-    <link rel="stylesheet" href="tptpstil.css" />
+    <link rel="stylesheet" href="css/tptpstil.css" />
   </head>
   <body>
-    <script src="tptpskripte.js" defer></script>
+    <aside class="popup">
+      <!-- Ovo ce biti zatamljena popup pozadina  -->
+      <div class="popup-sadrzaj">
+        <!-- Ovo ce biti sadržaj popup prozora -->
+        <button class="popup-zatvori">X</button>
+        <h2 id="popup-naslov"></h2>
+        <p id="popup-opis"></p>
+      </div>
+    </aside>
+
+    <aside class="popup-kupi">
+      <!-- Ovo ce biti zatamljena popup pozadina  -->
+      <div class="popup-kupi-sadrzaj">
+        <!-- Ovo ce biti sadržaj popup prozora -->
+        <button class="popup-kupi-zatvori">X</button>
+        <h2 id="popup-kupi-naslov"></h2>
+        <img id="popup-kupi-slika" src="" alt="" />
+        <p id="popup-kupi-cijena"></p>
+      </div>
+    </aside>
+
+    <section class="racunari">
+      <!-- Ovo predstavlja kod za artikle-računare -->
+      <article
+        class="kartica"
+        data-cijena=""
+        data-cpu=""
+        data-gpu=""
+        data-ram=""
+        data-storage=""
+        data-opis=""
+        data-naslov=""
+        data-slika=""
+        ;
+      >
+        <img src="" alt="" />
+        <p class="cijena"></p>
+        <p class="opis"></p>
+        <button class="kupi">Kupi</button>
+      </article>
+
+      <article
+        class="kartica"
+        data-cijena="1250"
+        data-cpu="amd"
+        data-gpu="amd"
+        data-ram="16gb"
+        data-storage="1tb"
+        data-opis="CPU:AMD Ryzen 5 5600X,GPU:AMD Radeon RX 6600, 16GB RAM, 1TB NVMe SSD, Prebuilt Tower PC with Integrated Graphics, ATX 3.0 Power, RGB Cooling Fans"
+        data-naslov="Gaming PC Desktop Računar"
+        data-slika="images/pc1250.png"
+        ;
+      >
+        <img src="images/pc1250.png" alt="Gaming PC Desktop Računar" />
+        <p class="cijena">1250 KM</p>
+        <p class="opis">AMD Ryzen 5 | AMD Radeon RX 6600</p>
+        <button class="kupi">Kupi</button>
+      </article>
+
+      <article
+        class="kartica"
+        data-cijena="1000"
+        data-cpu="amd"
+        data-gpu="amd"
+        data-ram="16gb"
+        data-storage="1tb"
+        data-opis="CPU:AMD Ryzen 5 5600X,GPU:AMD Radeon RX 6600, 16GB RAM, 1TB NVMe SSD, Prebuilt Tower PC with Integrated Graphics, ATX 3.0 Power, RGB Cooling Fans"
+        data-naslov="Gaming PC Desktop Računar"
+        data-slika=""
+        ;
+      >
+        <img src="images/pc1250.png" alt="Gaming PC Desktop Računar" />
+        <p class="cijena">1250 KM</p>
+        <p class="opis">AMD Ryzen 5 | AMD Radeon RX 6600</p>
+        <button class="kupi">Kupi</button>
+      </article>
+    </section>
+
+    <script src="js/tptpskripte.js" defer></script>
   </body>
 </html>

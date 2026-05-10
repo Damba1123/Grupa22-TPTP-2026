@@ -1,1 +1,219 @@
+:root {
+  --pozadina: #0b1020;
+  --tekst: #eaf2ff;
+  --popup: #151b2e;
+  --sporedna: #00d4ff;
+}
 
+body {
+  background-color: var(--pozadina);
+  color: var(--tekst);
+  font-family: "Andale Mono", monospace;
+}
+
+.racunari {
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  gap: 100px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 80px;
+  transform: translateX(200px);
+}
+
+.kartica {
+  position: relative;
+  height: 350px;
+  border: 3px solid #ffffffee;
+  border-radius: 15px;
+  padding: 30px;
+  background-color: var(--sporedna);
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.kartica img {
+  width: 280px;
+  height: 240px;
+  object-fit: contain;
+}
+
+.cijena {
+  text-font-style:
+    andale mono,
+    monospace;
+  font-weight: 550;
+  position: absolute;
+  bottom: 15px;
+  text-align: left;
+  font-size: 28px;
+  -webkit-text-stroke: 1px var(--pozadina);
+}
+
+.kupi {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  padding: 4.5px 100px;
+  border: 1px solid var(--pozadina);
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.opis {
+  position: absolute;
+  bottom: 60px;
+  text-align: left;
+  width: 300px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.kartica:hover {
+  transition: ease-in-out 0.5s;
+  transform: scale(1.03);
+  cursor: pointer;
+}
+.popup {
+  position: fixed;
+  display: none;
+  backdrop-filter: blur(4px);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  z-index: 1000;
+}
+
+.popup.aktivan {
+  display: flex;
+}
+
+.popup-sadrzaj {
+  background-color: var(--popup);
+  padding: 10px;
+  border-radius: 10px;
+  border: 2.5px solid white;
+  width: 600px;
+  height: 350px;
+}
+
+.popup-kupi {
+  position: fixed;
+  display: none;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  justify-content: right;
+  align-items: right;
+  z-index: 3000;
+}
+
+.popup-kupi.aktivan {
+  display: flex;
+}
+
+.popup-kupi-sadrzaj {
+  background-color: rgba(255, 255, 255, 0.45);
+  border-radius: 10px;
+  width: 300px;
+  height: 600px;
+}
+
+.popup-kupi-sadrzaj img {
+  height: 175px;
+  width: 175px;
+  transform: translateX(20px);
+}
+
+.popup-kupi-zatvori {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 0, 0, 0.3);
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  text-font-style:
+    andale mono,
+    monospace;
+  font-size: 15px;
+}
+
+#popup-kupi-cijena {
+  color: var(--pozadina);
+  font-size: 28px;
+  font-weight: bold;
+  text-align: left;
+  transform: translatex(25px);
+  -webkit-text-stroke: 0.1px white;
+}
+
+@media (max-width: 900px) {
+  .racunari {
+    justify-content: center;
+    grid-template-columns: repeat(2, 200px);
+    justify-items: center;
+    padding-top: 115px;
+    padding-left: 0;
+    transform: none;
+  }
+
+  .kartica {
+    width: 200px;
+    height: 300px;
+  }
+  .kartica img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .kupi {
+    padding: 5px 100px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .opis {
+    width: 220px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .racunari {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+    padding-left: 0;
+    transform: none;
+  }
+
+  .kartica {
+    width: 300px;
+  }
+
+  .kartica img {
+    height: 200px;
+    width: 230px;
+  }
+
+  .popup-kupi-sadrzaj {
+    width: 200px;
+    height: 600px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .racunari {
+    max-width: 1200px;
+    gap: 140px;
+  }
+}
