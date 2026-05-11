@@ -8,37 +8,34 @@
   </head>
   <body>
     <header>
-        <div class="logo">PC<span>Tech</span></div>
-        
-        <nav class="glavna-nav">
-            <ul>
-                <li><a href="index.html" class="active">Početna</a></li>
-                <li><a href="sadrzaj.html">Sadržaj</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
-                <li><a href="https://github.com/Damba1123/Grupa22-TPTP-2026" target="_blank">GitHub</a></li>
-            </ul>
-        </nav>
-        <!--  Potencijalno dugme za promjenu dark/light teme  -->
-        <button id="dark-tema" class="tema-btn">Mod</button>
+      <div class="logo">PC<span>Tech</span></div>
+
+      <nav class="glavna-nav">
+        <ul>
+          <li><a href="index.html" class="active">Početna</a></li>
+          <li><a href="sadrzaj.html">Sadržaj</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li>
+            <a
+              href="https://github.com/Damba1123/Grupa22-TPTP-2026"
+              target="_blank"
+              class="github-link"
+              >GitHub
+              <img
+                src="images/githublogo1.png"
+                alt="Ovo je slika githuba"
+                id="github-logo"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!--  Potencijalno dugme za promjenu dark/light teme  -->
+      <button id="dark-tema" class="tema-btn">Mod</button>
     </header>
 
-    <aside class="popup"> ... </aside>
-    
-    <main class="filter-komponenti">
-        <nav class="sporedna-nav">
-            <h3>Filteri</h3>
-            <ul>
-                <li><button class="glavni-btn" onclick="filtriraj('Sve')">PC</button></li>
-                <li><button class="glavni-btn" onclick="filtriraj('cpu')">CPU</button></li>
-                 <li><button class="glavni-btn" onclick="filtriraj('gpu')">GPU</button></li>
-                 <li><button class="glavni-btn" onclick="filtriraj('memory')">Memorija</button></li>
-                 <li><button class="glavni-btn" onclick="filtriraj('motherboard')">Maticna ploča</button></li>
-            </ul>
-            <div class="status">Pronađeno: <span id="brojac">0</span></div>
-        </nav>
+    <aside class="popup3">...</aside>
 
-        
-    </main>
     <aside class="popup">
       <!-- Ovo ce biti zatamljena popup pozadina  -->
       <div class="popup-sadrzaj">
@@ -54,69 +51,94 @@
       <div class="popup-kupi-sadrzaj">
         <!-- Ovo ce biti sadržaj popup prozora -->
         <button class="popup-kupi-zatvori">X</button>
-        <h2 id="popup-kupi-naslov"></h2>
-        <img id="popup-kupi-slika" src="" alt="" />
-        <p id="popup-kupi-cijena"></p>
+        <h2>Korpa</h2>
+        <div id="korpa-lista"></div>
       </div>
     </aside>
+    <main class="glavni-dio">
+      <nav class="sporedna-nav">
+        <h3>Filteri</h3>
+        <ul>
+          <li>
+            <button class="glavni-btn" onclick="filtriraj('Sve')">PC</button>
+          </li>
+          <li>
+            <button class="glavni-btn" onclick="filtriraj('cpu')">CPU</button>
+          </li>
+          <li>
+            <button class="glavni-btn" onclick="filtriraj('gpu')">GPU</button>
+          </li>
+          <li>
+            <button class="glavni-btn" onclick="filtriraj('memory')">
+              Memorija
+            </button>
+          </li>
+          <li>
+            <button class="glavni-btn" onclick="filtriraj('motherboard')">
+              Maticna ploča
+            </button>
+          </li>
+        </ul>
+        <div class="status">Pronađeno: <span id="brojac">0</span></div>
+      </nav>
 
-    <section class="racunari">
-      <!-- Ovo predstavlja kod za artikle-računare -->
-      <article
-        class="kartica"
-        data-cijena=""
-        data-cpu=""
-        data-gpu=""
-        data-ram=""
-        data-storage=""
-        data-opis=""
-        data-naslov=""
-        data-slika=""
-        ;
-      >
-        <img src="" alt="" />
-        <p class="cijena"></p>
-        <p class="opis"></p>
-        <button class="kupi">Kupi</button>
-      </article>
+      <section class="racunari">
+        <!-- Ovo predstavlja kod za artikle-računare -->
+        <article
+          class="kartica"
+          data-cijena=""
+          data-cpu=""
+          data-gpu=""
+          data-ram=""
+          data-storage=""
+          data-opis=""
+          data-naslov=""
+          data-slika=""
+          ;
+        >
+          <img src="" alt="" />
+          <p class="cijena"></p>
+          <p class="opis"></p>
+          <button class="kupi">Kupi</button>
+        </article>
 
-      <article
-        class="kartica"
-        data-cijena="1250"
-        data-cpu="amd"
-        data-gpu="amd"
-        data-ram="16gb"
-        data-storage="1tb"
-        data-opis="CPU:AMD Ryzen 5 5600X,GPU:AMD Radeon RX 6600, 16GB RAM, 1TB NVMe SSD, Prebuilt Tower PC with Integrated Graphics, ATX 3.0 Power, RGB Cooling Fans"
-        data-naslov="Gaming PC Desktop Računar"
-        data-slika="images/pc1250.png"
-        ;
-      >
-        <img src="images/pc1250.png" alt="Gaming PC Desktop Računar" />
-        <p class="cijena">1250 KM</p>
-        <p class="opis">AMD Ryzen 5 | AMD Radeon RX 6600</p>
-        <button class="kupi">Kupi</button>
-      </article>
+        <article
+          class="kartica"
+          data-cijena="1250"
+          data-cpu="amd"
+          data-gpu="amd"
+          data-ram="16gb"
+          data-storage="1tb"
+          data-opis="CPU:AMD Ryzen 5 5600X,GPU:AMD Radeon RX 6600, 16GB RAM, 1TB NVMe SSD, Prebuilt Tower PC with Integrated Graphics, ATX 3.0 Power, RGB Cooling Fans"
+          data-naslov="Gaming PC Desktop Računar"
+          data-slika="images/pc1250.png"
+          ;
+        >
+          <img src="images/pc1250.png" alt="Gaming PC Desktop Računar" />
+          <p class="cijena">1250 KM</p>
+          <p class="opis">AMD Ryzen 5 | AMD Radeon RX 6600</p>
+          <button class="kupi">Kupi</button>
+        </article>
 
-      <article
-        class="kartica"
-        data-cijena="1000"
-        data-cpu="amd"
-        data-gpu="amd"
-        data-ram="16gb"
-        data-storage="1tb"
-        data-opis="CPU:AMD Ryzen 5 5600X,GPU:AMD Radeon RX 6600, 16GB RAM, 1TB NVMe SSD, Prebuilt Tower PC with Integrated Graphics, ATX 3.0 Power, RGB Cooling Fans"
-        data-naslov="Gaming PC Desktop Računar"
-        data-slika=""
-        ;
-      >
-        <img src="images/pc1250.png" alt="Gaming PC Desktop Računar" />
-        <p class="cijena">1250 KM</p>
-        <p class="opis">AMD Ryzen 5 | AMD Radeon RX 6600</p>
-        <button class="kupi">Kupi</button>
-      </article>
-    </section>
-
+        <article
+          class="kartica"
+          data-cijena="1000"
+          data-cpu="amd"
+          data-gpu="amd"
+          data-ram="16gb"
+          data-storage="1tb"
+          data-opis="CPU:AMD Ryzen 5 5600X,GPU:AMD Radeon RX 6600, 16GB RAM, 1TB NVMe SSD, Prebuilt Tower PC with Integrated Graphics, ATX 3.0 Power, RGB Cooling Fans"
+          data-naslov="Gaming PC Desktop Računar"
+          data-slika=""
+          ;
+        >
+          <img src="images/pc1250.png" alt="Gaming PC Desktop Računar" />
+          <p class="cijena">1250 KM</p>
+          <p class="opis">AMD Ryzen 5 | AMD Radeon RX 6600</p>
+          <button class="kupi">Kupi</button>
+        </article>
+      </section>
+    </main>
     <script src="js/tptpskripte.js" defer></script>
   </body>
 </html>

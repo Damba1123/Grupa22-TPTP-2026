@@ -3,13 +3,21 @@
   --tekst: #eaf2ff;
   --popup: #151b2e;
   --sporedna: #00d4ff;
-  --akcent:#2563eb;
+  --akcent: #2563eb;
 }
 
 body {
   background-color: var(--pozadina);
   color: var(--tekst);
   font-family: "Andale Mono", monospace;
+}
+
+.glavni-dio {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: start;
+  padding: 40px 20px 40px 0;
 }
 
 .racunari {
@@ -19,7 +27,7 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   padding-top: 80px;
-  transform: translateX(200px);
+  transofrm: none;
 }
 
 .kartica {
@@ -31,6 +39,8 @@ body {
   background-color: var(--sporedna);
   overflow: hidden;
   object-fit: contain;
+  transition: transform 0.22s ease-in-out;
+  background-color: 0.4s ease;
 }
 
 .kartica img {
@@ -61,6 +71,13 @@ body {
   cursor: pointer;
   background-color: #ffffff;
   color: rgb(0, 0, 0);
+  transition:
+    transform 0.3s ease,
+    background-color 0.4s ease;
+}
+
+.kupi:hover {
+  background-color: rgb(44, 164, 70);
 }
 
 .opis {
@@ -73,9 +90,9 @@ body {
 }
 
 .kartica:hover {
-  transition: ease-in-out 0.5s;
   transform: scale(1.03);
   cursor: pointer;
+  background-color: #6adff7;
 }
 .popup {
   position: fixed;
@@ -109,9 +126,7 @@ body {
   position: fixed;
   display: none;
   right: 0;
-  left: 0;
   top: 0;
-  bottom: 0;
   justify-content: right;
   align-items: right;
   z-index: 3000;
@@ -128,10 +143,69 @@ body {
   height: 600px;
 }
 
-.popup-kupi-sadrzaj img {
-  height: 175px;
-  width: 175px;
-  transform: translateX(20px);
+.popup-zatvori{
+  transition: transform 0.3s ease-in-out,
+  background-color: 0.3s ease-in-out;
+  border-radius: 5px;
+  border: 0.5px solid transparent;
+}
+.popup-zatvori:hover{
+  background-color: crimson;
+  border: 0.5px solid white;
+  transform: scale(1.01);
+}
+
+.korpa-artikal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-bottom: 1px solid var(--pozadina);
+}
+
+.korpa-artikal img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.korpa-artikal p {
+  margin: 0;
+  color: var(--pozadina);
+  font-size: 14px;
+  -webkit-text-stroke: 0.1px var(--akcent);
+}
+
+.korpa-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dugme-ukloni {
+  max-width: 55px;
+  border-radius: 25px;
+  background-color: rgba(163, 25, 25, 0.842);
+  border: 1px solid var(--pozadina);
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  bottom: 0;
+  top: 0;
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease;
+}
+
+.dugme-ukloni:hover {
+  transform: scale(1.15);
+  background-color: rgba(230, 25, 25, 0.9);
+}
+
+#korpa-lista {
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 .popup-kupi-zatvori {
@@ -147,24 +221,111 @@ body {
     andale mono,
     monospace;
   font-size: 15px;
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease;
 }
 
-#popup-kupi-cijena {
-  color: var(--pozadina);
-  font-size: 28px;
-  font-weight: bold;
-  text-align: left;
-  transform: translatex(25px);
-  -webkit-text-stroke: 0.1px white;
+.popup-kupi-zatvori:hover {
+  transform: scale(1.075);
+  background-color: rgba(230, 25, 25, 0.9);
 }
+
+/* DIO KODA ZA STILIZIRANJE GLAVNE NAVIGACIJE */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background-color: #1e293b; /* Tamna boja za moderni izgled */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.logo span {
+  color: #2563eb; /* Plavi akcent */
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transform: translateY(-3px);
+}
+
+#github-logo {
+  width: 25px;
+  height: 25px;
+  transform: translateY(-5px);
+  object-fit: contain;
+}
+.glavna-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+.glavna-nav a {
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.glavna-nav a:hover,
+.glavna-nav a.active {
+  color: #38bdf8;
+  border-bottom: 2px solid #38bdf8;
+}
+
+/* DIO KODA ZA STILIZIRANJE GLAVNE NAVIGACIJE */
+
+/* DIO KODA ZA STILIZIRANJE FILTERA */
+
+.sporedna-nav h3 {
+  text-transform: uppercase;
+  text-weight: bold;
+}
+
+.status {
+  margin-top: 15px;
+  margin-bottom: -25px;
+}
+
+.sporedna-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.glavni-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--akcent);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* DIO KODA ZA STILIZIRANJE FILTERA */
 
 @media (max-width: 900px) {
   .racunari {
     justify-content: center;
     grid-template-columns: repeat(2, 200px);
     justify-items: center;
-    padding-top: 115px;
-    padding-left: 0;
     transform: none;
   }
 
@@ -177,8 +338,12 @@ body {
     width: 200px;
   }
 
+  .popup {
+    z-index: 4000;
+    scale: 0.8;
+  }
+
   .kupi {
-    padding: 5px 100px;
     left: 15px;
     right: 15px;
   }
@@ -187,12 +352,36 @@ body {
     width: 220px;
     font-size: 16px;
   }
+  /* NAMJESTA DA LIJEPO IZGLEDAJU DUGMAD I ARTIKLI */
+  .glavni-dio {
+    display: block;
+    padding: 20px;
+  }
+  .status {
+    text-align: center;
+  }
+  .sporedna-nav li {
+    top: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .glavni-btn {
+    width: 100;
+    max-width: 180px;
+    padding: 10px;
+  }
+
+  .sporedna-nav h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-top: -15px;
+  }
 }
 
 @media (max-width: 600px) {
   .racunari {
     grid-template-columns: 1fr;
-    padding-top: 100px;
     padding-left: 0;
     transform: none;
   }
@@ -210,69 +399,14 @@ body {
     width: 200px;
     height: 600px;
   }
+  .popup {
+    z-index: 4000;
+    scale: 0.8;
+  }
 }
-
 @media (min-width: 1400px) {
   .racunari {
     max-width: 1200px;
     gap: 140px;
   }
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    background-color: #1e293b; /* Tamna boja za moderni izgled */
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.logo span {
-    color: #2563eb; /* Plavi akcent */
-}
-.glavna-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-.glavna-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.glavna-nav a:hover, .glavna-nav a.active {
-    color: #38bdf8;
-    border-bottom: 2px solid #38bdf8;
-}
-.filter-komponenti {
-    display: flex;
-    padding: 20px 5%;
-    gap: 30px;
-}
-.sporedna-nav {
-    flex: 1;
-    min-width: 200px;
-}
-.glavni-btn {
-    display: block;
-    width: 10%;
-    padding: 10px;
-    background-color:var(--akcent);
-    color: white;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-    letter-spacing: 1px;
-  
-    text-transform: uppercase;
 }

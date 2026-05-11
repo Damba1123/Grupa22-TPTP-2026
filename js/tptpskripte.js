@@ -27,17 +27,34 @@ const popupkupinaslov = document.getElementById("popup-kupi-naslov");
 const popupkupicijena = document.getElementById("popup-kupi-cijena");
 const popupkupislika = document.getElementById("popup-kupi-slika");
 
+const korpaLista = document.getElementById("korpa-lista");
+
 kupidugme.forEach(function (dugme) {
   dugme.addEventListener("click", function (event) {
-    event.stopPropagation(); // Zaustavlja širenje događaja na roditeljske elemente
-    popupkupi.classList.add("aktivan");
+    event.stopPropagation();
+
     const kartica = dugme.closest(".kartica");
-    popupkupislika.src = kartica.dataset.slika;
-    popupkupislika.alt = kartica.dataset.naslov;
-    popupkupicijena.textContent = kartica.dataset.cijena + " KM";
+
+    const artikalKorpe = document.createElement("div");
+    artikalKorpe.classList.add("korpa-artikal");
+
+    artikalKorpe.innerHTML = `
+      <img src="${kartica.dataset.slika}" alt="${kartica.dataset.naslov}">
+      <div class="korpa-info">
+      <p>${kartica.dataset.naslov}</p>
+      <button class="dugme-ukloni">Ukloni</button>
+      </div>
+      <p>${kartica.dataset.cijena} KM</p>
+    `;
+
+    const dugmeukloni = artikalKorpe.querySelector(".dugme-ukloni");
+    dugmeukloni.addEventListener("click", function () {
+      artikalKorpe.remove();
+    });
+    korpaLista.appendChild(artikalKorpe);
+    popupkupi.classList.add("aktivan");
   });
 });
-
 zatvorikupi.forEach(function (dugme) {
   dugme.addEventListener("click", function (event) {
     event.stopPropagation();
