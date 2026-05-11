@@ -7,6 +7,38 @@
     <link rel="stylesheet" href="css/tptpstil.css" />
   </head>
   <body>
+    <header>
+        <div class="logo">PC<span>Tech</span></div>
+        
+        <nav class="glavna-nav">
+            <ul>
+                <li><a href="index.html" class="active">Početna</a></li>
+                <li><a href="sadrzaj.html">Sadržaj</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="https://github.com/Damba1123/Grupa22-TPTP-2026" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+        <!--  Potencijalno dugme za promjenu dark/light teme  -->
+        <button id="dark-tema" class="tema-btn">Mod</button>
+    </header>
+
+    <aside class="popup"> ... </aside>
+    
+    <main class="filter-komponenti">
+        <nav class="sporedna-nav">
+            <h3>Filteri</h3>
+            <ul>
+                <li><button class="glavni-btn" onclick="filtriraj('Sve')">PC</button></li>
+                <li><button class="glavni-btn" onclick="filtriraj('cpu')">CPU</button></li>
+                 <li><button class="glavni-btn" onclick="filtriraj('gpu')">GPU</button></li>
+                 <li><button class="glavni-btn" onclick="filtriraj('memory')">Memorija</button></li>
+                 <li><button class="glavni-btn" onclick="filtriraj('motherboard')">Maticna ploča</button></li>
+            </ul>
+            <div class="status">Pronađeno: <span id="brojac">0</span></div>
+        </nav>
+
+        
+    </main>
     <aside class="popup">
       <!-- Ovo ce biti zatamljena popup pozadina  -->
       <div class="popup-sadrzaj">

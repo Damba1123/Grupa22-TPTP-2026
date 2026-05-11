@@ -3,6 +3,7 @@
   --tekst: #eaf2ff;
   --popup: #151b2e;
   --sporedna: #00d4ff;
+  --akcent:#2563eb;
 }
 
 body {
@@ -216,4 +217,62 @@ body {
     max-width: 1200px;
     gap: 140px;
   }
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #1e293b; /* Tamna boja za moderni izgled */
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.logo span {
+    color: #2563eb; /* Plavi akcent */
+}
+.glavna-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.glavna-nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.glavna-nav a:hover, .glavna-nav a.active {
+    color: #38bdf8;
+    border-bottom: 2px solid #38bdf8;
+}
+.filter-komponenti {
+    display: flex;
+    padding: 20px 5%;
+    gap: 30px;
+}
+.sporedna-nav {
+    flex: 1;
+    min-width: 200px;
+}
+.glavni-btn {
+    display: block;
+    width: 10%;
+    padding: 10px;
+    background-color:var(--akcent);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    letter-spacing: 1px;
+  
+    text-transform: uppercase;
 }
