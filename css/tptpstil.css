@@ -318,6 +318,40 @@ header {
   cursor: pointer;
   text-transform: uppercase;
 }
+.filter-sekcija {
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.filter-grupa {
+  display: flex;
+  flex-direction: column; /* Gumbi jedan ispod drugog unutar grupe */
+  gap: 8px;
+}
+
+.filter-btn {
+  background: var(--popup);
+  border: 1px solid var(--sporedna);
+  color: var(--tekst);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-align: left;
+}
+
+.filter-btn:hover, .aktivan-filter {
+  background: var(--sporedna);
+  color: var(--pozadina);
+}
+
+.filter-btn.glavno {
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: var(--akcent);
+}
 
 /* DIO KODA ZA STILIZIRANJE FILTERA */
 
@@ -410,3 +444,186 @@ header {
     gap: 140px;
   }
 }
+
+
+/* DIO KODA ZA STILIZIRANJE KONTAKT FORME */
+
+
+
+
+.glavni-dio {
+    display: flex;
+    gap: 40px;
+    padding: 60px 8%;
+    align-items: flex-start; 
+    min-height: 80vh;
+}
+
+
+.kontakt-sadrzaj {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+
+
+.kontakt-kartica {
+    background-color: var(--popup);
+    border: 3px solid var(--sporedna); 
+    border-radius: 15px;
+    padding: 35px;
+    width: 100%;
+    max-width: 550px; 
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+    position: relative;
+}
+
+.kontakt-kartica h2 {
+    font-family: "Andale Mono", monospace;
+    color: var(--sporedna);
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 24px;
+}
+
+
+.forma-red {
+    display: flex;
+    gap: 20px; 
+}
+
+.polje-grupa {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.polje-grupa label {
+    font-family: "Andale Mono", monospace;
+    font-size: 13px;
+    color: var(--tekst);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+/* Unosi (Input i Textarea) */
+.polje-grupa input, 
+.polje-grupa textarea {
+    background-color: rgba(11, 16, 32, 0.8); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 6px;
+    font-family: "Andale Mono", monospace;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box; 
+    transition: all 0.3s ease;
+}
+
+.polje-grupa input:focus, 
+.polje-grupa textarea:focus {
+    border-color: var(--sporedna);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+    outline: none;
+}
+
+
+.forma-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color:var(--akcent);
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    font-family: "Andale Mono", monospace;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.forma-submit-btn:hover {
+    background-color: var(--sporedna);
+    color: var(--pozadina);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+
+.greska {
+    color: #ff4444;
+    font-size: 11px;
+    margin-top: 4px;
+    height: 14px; 
+    font-weight: bold;
+}
+
+.input-greska {
+    border: 2px solid #ff4444 !important;
+    background-color: rgba(255, 68, 68, 0.05) !important;
+}
+
+
+#uspjeh-poruka {
+    margin-top: 25px;
+    padding: 15px;
+    border-left: 5px solid #65d84e;
+    background: rgba(101, 216, 78, 0.1);
+    color: #65d84e;
+    font-family: "Andale Mono", monospace;
+    font-size: 14px;
+    border-radius: 4px;
+    animation: fadeIn 0.5s ease-in;
+}
+.info-tekst {
+    font-size: 14px;
+    color: var(--tekst);
+}
+
+.radno-vrijeme {
+    display: block;
+    color: var(--sporedna);
+}
+
+#uspjeh-poruka {
+    display: none; /* Inicijalno sakriveno bez inline stila */
+    margin-top: 25px;
+    padding: 15px;
+    border-left: 5px solid #65d84e;
+    background: rgba(101, 216, 78, 0.1);
+    color: #65d84e;
+    font-family: "Andale Mono", monospace;
+    font-size: 14px;
+    border-radius: 4px;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+    .glavni-dio {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .forma-red {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .sporedna-nav {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+.vidljivo { display: block !important; }
+/* DIO KODA ZA STILIZIRANJE KONTAKT FORME */

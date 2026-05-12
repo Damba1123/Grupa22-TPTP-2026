@@ -56,32 +56,44 @@
       </div>
     </aside>
     <main class="glavni-dio">
-      <nav class="sporedna-nav">
-        <h3>Filteri</h3>
-        <ul>
-          <li>
-            <button class="glavni-btn" onclick="filtriraj('Sve')">PC</button>
-          </li>
-          <li>
-            <button class="glavni-btn" onclick="filtriraj('cpu')">CPU</button>
-          </li>
-          <li>
-            <button class="glavni-btn" onclick="filtriraj('gpu')">GPU</button>
-          </li>
-          <li>
-            <button class="glavni-btn" onclick="filtriraj('memory')">
-              Memorija
-            </button>
-          </li>
-          <li>
-            <button class="glavni-btn" onclick="filtriraj('motherboard')">
-              Maticna ploča
-            </button>
-          </li>
-        </ul>
-        <div class="status">Pronađeno: <span id="brojac">0</span></div>
-      </nav>
 
+      <!-- SSPOREDNA NAVIGACIJA-FILTERI  -->
+      <nav class="sporedna-nav">
+  <div class="filter-sekcija">
+    <h3>Glavno</h3>
+    <button class="filter-btn glavno" data-filter="Sve">Svi Artikli</button>
+  </div>
+
+  <div class="filter-sekcija">
+    <h3>Procesori (CPU)</h3>
+    <div class="filter-grupa">
+      <button class="filter-btn" data-tip="cpu" data-filter="amd">AMD</button>
+      <button class="filter-btn" data-tip="cpu" data-filter="intel">Intel</button>
+    </div>
+  </div>
+
+  <div class="filter-sekcija">
+    <h3>Grafičke kartice(GPU)</h3>
+    <div class="filter-grupa">
+      <button class="filter-btn" data-tip="gpu" data-filter="nvidia">Nvidia</button>
+      <button class="filter-btn" data-tip="gpu" data-filter="amd">AMD Radeon</button>
+    </div>
+  </div>
+
+  <div class="filter-sekcija">
+    <h3>Memorija</h3>
+    <div class="filter-grupa">
+      <button class="filter-btn" data-tip="ram" data-filter="8gb">8 GB</button>
+      <button class="filter-btn" data-tip="ram" data-filter="16gb">16 GB</button>
+      <button class="filter-btn" data-tip="ram" data-filter="32gb">32 GB</button>
+      <button class="filter-btn" data-tip="ram" data-filter="64gb">64 GB</button>
+    </div>
+  </div>
+
+  <div class="status-info">
+    <p>Pronađeno: <span id="brojac">0</span></p>
+  </div>
+</nav>
       <section class="racunari">
         <!-- Ovo predstavlja kod za artikle-računare -->
         <article
