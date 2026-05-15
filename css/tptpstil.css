@@ -12,11 +12,22 @@ body {
   font-family: "Andale Mono", monospace;
 }
 
+.tema-btn {
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  scale: 1.15;
+  transition: 0.3s all;
+}
+.tema-btn:hover {
+  cursor: pointer;
+  background-color: var(--pozadina);
+}
+
 .glavni-dio {
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 40px;
-  align-items: start;
   padding: 40px 20px 40px 0;
 }
 
@@ -143,13 +154,14 @@ body {
   height: 600px;
 }
 
-.popup-zatvori{
-  transition: transform 0.3s ease-in-out,
-  background-color: 0.3s ease-in-out;
+.popup-zatvori {
+  transition:
+    transform 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
   border-radius: 5px;
   border: 0.5px solid transparent;
 }
-.popup-zatvori:hover{
+.popup-zatvori:hover {
   background-color: crimson;
   border: 0.5px solid white;
   transform: scale(1.01);
@@ -341,7 +353,8 @@ header {
   text-align: left;
 }
 
-.filter-btn:hover, .aktivan-filter {
+.filter-btn:hover,
+.aktivan-filter {
   background: var(--sporedna);
   color: var(--pozadina);
 }
@@ -354,6 +367,361 @@ header {
 }
 
 /* DIO KODA ZA STILIZIRANJE FILTERA */
+
+/* DIO KODA ZA STILIZIRANJE KONTAKT FORME */
+
+.kontakt-sadrzaj {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.kontakt-kartica {
+  background-color: var(--popup);
+  border: 3px solid var(--sporedna);
+  border-radius: 15px;
+  padding: 35px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+  position: relative;
+}
+
+.kontakt-kartica h2 {
+  font-family: "Andale Mono", monospace;
+  color: var(--sporedna);
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 24px;
+}
+
+.forma-red {
+  display: flex;
+  gap: 20px;
+}
+
+.polje-grupa {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.polje-grupa label {
+  font-family: "Andale Mono", monospace;
+  font-size: 13px;
+  color: var(--tekst);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+/* Unosi (Input i Textarea) */
+.polje-grupa input,
+.polje-grupa textarea {
+  background-color: rgba(11, 16, 32, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: "Andale Mono", monospace;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.polje-grupa input:focus,
+.polje-grupa textarea:focus {
+  background-color: var(--popup);
+  border-color: var(--sporedna);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  outline: none;
+}
+
+.forma-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--akcent);
+  color: #000000;
+  border: none;
+  border-radius: 10px;
+  font-family: "Andale Mono", monospace;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.forma-submit-btn:hover {
+  background-color: var(--sporedna);
+  color: var(--pozadina);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+.greska {
+  color: #ff4444;
+  font-size: 11px;
+  margin-top: 4px;
+  height: 14px;
+  font-weight: bold;
+}
+
+.input-greska {
+  border: 2px solid #ff4444 !important;
+  background-color: rgba(255, 68, 68, 0.05) !important;
+}
+
+#uspjeh-poruka {
+  margin-top: 25px;
+  padding: 15px;
+  border-left: 5px solid #65d84e;
+  background: rgba(101, 216, 78, 0.1);
+  color: #65d84e;
+  font-family: "Andale Mono", monospace;
+  font-size: 14px;
+  border-radius: 4px;
+  animation: fadeIn 0.5s ease-in;
+}
+#info-tekst {
+  font-size: 16px;
+  color: var(--tekst);
+}
+
+.radno-vrijeme {
+  display: block;
+  color: var(--sporedna);
+}
+
+#uspjeh-poruka {
+  display: none; /* Inicijalno sakriveno bez inline stila */
+  margin-top: 25px;
+  padding: 15px;
+  border-left: 5px solid #65d84e;
+  background: rgba(101, 216, 78, 0.1);
+  color: #65d84e;
+  font-family: "Andale Mono", monospace;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.vidljivo {
+  display: block !important;
+}
+
+/* DIO KODA ZA STILIZIRANJE KONTAKT FORME */
+
+/* DIO KODA ZA STILIZIRANJE SADRZAJ STRANICE */
+
+.uvod-sadrzaj {
+  text-align: center;
+  color: var(--tekst);
+  font-size: 24px;
+}
+
+.pc-mapa-kartica h2 {
+  text-align: center;
+  color: var(--tekst);
+  font-size: 26px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.pc-mapa-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.pc-mapa-wrapper img {
+  width: 100;
+  height: 100;
+  width: 700px;
+  height: 700px;
+  object-fit: contain;
+  border: 5px solid rgba(0, 212, 255, 0.35);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+}
+
+.zona {
+  position: absolute;
+  transition: 0.3s ease;
+  background-color: rgba(0, 212, 255, 0.1);
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.zona:hover {
+  background-color: rgba(0, 212, 255, 0.35);
+  border-color: var(--sporedna);
+}
+
+.zona-cpu {
+  top: 27%;
+  left: 36%;
+  width: 8%;
+  height: 13%;
+}
+
+.zona-gpu {
+  top: 48%;
+  left: 28.2%;
+  width: 32.4%;
+  height: 12%;
+}
+
+.zona-ram {
+  top: 21%;
+  left: 46%;
+  width: 3%;
+  height: 24%;
+}
+
+.linija {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  margin: 30px 0;
+}
+
+.opis-komponente {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.opis-komponente img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border: 2.5px solid var(--sporedna);
+}
+.opis-komponente h2 {
+  color: var(--tekst);
+  text-align: center;
+  font-size: 50px;
+  padding: 30px;
+}
+
+.proizvodi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.komponenta-kartica h4,
+.komponenta-kartica p {
+  text-align: left;
+}
+
+#vrh-sadrzaj {
+  display: block;
+  width: fit-content;
+  font-size: 20px;
+  margin-left: auto;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+#vrh-sadrzaj:hover {
+  cursor: pointer;
+  color: var(--sporedna);
+  border-color: var(--sporedna);
+  transform: scale(1.04);
+}
+
+.cpunaslov {
+  margin-top: 40px;
+  letter-spacing: 4px;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 0 0 55px;
+}
+#intel-cpunaslov {
+  color: lightskyblue;
+}
+#amd-cpunaslov {
+  color: red;
+}
+
+.gpunaslov {
+  margin-top: 40px;
+  letter-spacing: 4px;
+  font-size: 28px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: underline;
+  text-shadow: 0 0 55px;
+}
+
+#intel-gpunaslov {
+  color: lightskyblue;
+}
+#amd-gpunaslov {
+  color: red;
+}
+
+#nvidia-gpunaslov {
+  color: greenyellow;
+}
+.table-list {
+  display: flex;
+}
+
+.ramnaslov {
+  font-size: 20px;
+  text-align: left;
+}
+
+.lista-komponenti {
+  border: 2px solid white;
+  border-radius: 7px;
+  width: 250px;
+  margin-left: auto;
+}
+
+.tabela-komponenti {
+  border: 2px solid white;
+}
+
+.lista-komponenti h2 {
+  text-align: center;
+}
+#ram01 {
+  color: gold;
+}
+
+.list {
+  color: var(--sporedna);
+}
+
+.komponenta-kartica img {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.komponenta-kartica1 img {
+  width: 220px;
+  height: 240px;
+  object-fit: cover;
+}
+
+/* DIO KODA ZA STILIZIRANJE SADRZAJ STRANICE */
 
 @media (max-width: 900px) {
   .racunari {
@@ -411,6 +779,43 @@ header {
     font-size: 24px;
     margin-top: -15px;
   }
+  #info-tekst {
+    text-align: center;
+  }
+
+  .pc-mapa-wrapper img {
+    width: 450px;
+    height: 450px;
+  }
+
+  .opis-komponente img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .opis-komponente h2 {
+    font-size: 34px;
+  }
+
+  #github-logo {
+    display: none;
+  }
+
+  .proizvodi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .komponenta-kartica1 img {
+    width: 220px;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .komponenta-kartica img {
+    width: 280px;
+    height: 140px;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 600px) {
@@ -437,6 +842,38 @@ header {
     z-index: 4000;
     scale: 0.8;
   }
+  #info-tekst {
+    display: block;
+    text-align: center;
+  }
+
+  .pc-mapa-wrapper img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .opis-komponente h2 {
+    padding: 5px;
+    font-size: 30px;
+  }
+
+  .tema-btn {
+    margin-top: -75px;
+  }
+
+  .table-list {
+    display: block;
+  }
+
+  .proizvodi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .komponenta-kartica img {
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+  }
 }
 @media (min-width: 1400px) {
   .racunari {
@@ -445,185 +882,13 @@ header {
   }
 }
 
-
-/* DIO KODA ZA STILIZIRANJE KONTAKT FORME */
-
-
-
-
-.glavni-dio {
-    display: flex;
-    gap: 40px;
-    padding: 60px 8%;
-    align-items: flex-start; 
-    min-height: 80vh;
-}
-
-
-.kontakt-sadrzaj {
-    flex: 3;
-    display: flex;
-    justify-content: center;
-}
-
-
-.kontakt-kartica {
-    background-color: var(--popup);
-    border: 3px solid var(--sporedna); 
-    border-radius: 15px;
-    padding: 35px;
-    width: 100%;
-    max-width: 550px; 
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
-    position: relative;
-}
-
-.kontakt-kartica h2 {
-    font-family: "Andale Mono", monospace;
-    color: var(--sporedna);
-    text-align: center;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 24px;
-}
-
-
-.forma-red {
-    display: flex;
-    gap: 20px; 
-}
-
-.polje-grupa {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 18px;
-    width: 100%;
-}
-
-.polje-grupa label {
-    font-family: "Andale Mono", monospace;
-    font-size: 13px;
-    color: var(--tekst);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    letter-spacing: 1px;
-}
-
-/* Unosi (Input i Textarea) */
-.polje-grupa input, 
-.polje-grupa textarea {
-    background-color: rgba(11, 16, 32, 0.8); 
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    padding: 12px;
-    border-radius: 6px;
-    font-family: "Andale Mono", monospace;
-    font-size: 15px;
-    width: 100%;
-    box-sizing: border-box; 
-    transition: all 0.3s ease;
-}
-
-.polje-grupa input:focus, 
-.polje-grupa textarea:focus {
-    border-color: var(--sporedna);
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-    outline: none;
-}
-
-
-.forma-submit-btn {
-    width: 100%;
-    padding: 14px;
-    background-color:var(--akcent);
-    color: #000000;
-    border: none;
-    border-radius: 10px;
-    font-family: "Andale Mono", monospace;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    text-transform: uppercase;
-    margin-top: 15px;
-    transition: 0.3s;
-}
-
-.forma-submit-btn:hover {
-    background-color: var(--sporedna);
-    color: var(--pozadina);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
-}
-
-
-.greska {
-    color: #ff4444;
-    font-size: 11px;
-    margin-top: 4px;
-    height: 14px; 
-    font-weight: bold;
-}
-
-.input-greska {
-    border: 2px solid #ff4444 !important;
-    background-color: rgba(255, 68, 68, 0.05) !important;
-}
-
-
-#uspjeh-poruka {
-    margin-top: 25px;
-    padding: 15px;
-    border-left: 5px solid #65d84e;
-    background: rgba(101, 216, 78, 0.1);
-    color: #65d84e;
-    font-family: "Andale Mono", monospace;
-    font-size: 14px;
-    border-radius: 4px;
-    animation: fadeIn 0.5s ease-in;
-}
-.info-tekst {
-    font-size: 14px;
-    color: var(--tekst);
-}
-
-.radno-vrijeme {
-    display: block;
-    color: var(--sporedna);
-}
-
-#uspjeh-poruka {
-    display: none; /* Inicijalno sakriveno bez inline stila */
-    margin-top: 25px;
-    padding: 15px;
-    border-left: 5px solid #65d84e;
-    background: rgba(101, 216, 78, 0.1);
-    color: #65d84e;
-    font-family: "Andale Mono", monospace;
-    font-size: 14px;
-    border-radius: 4px;
-}
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-
-@media (max-width: 768px) {
-    .glavni-dio {
-        flex-direction: column;
-        padding: 20px;
-    }
-    
-    .forma-red {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .sporedna-nav {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-}
-.vidljivo { display: block !important; }
-/* DIO KODA ZA STILIZIRANJE KONTAKT FORME */

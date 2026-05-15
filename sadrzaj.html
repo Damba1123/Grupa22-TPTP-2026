@@ -4,9 +4,435 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stranica za prodaju računara i preporuku PC komponenti</title>
-    <link rel="stylesheet" href="tptpstil.css" />
+    <link rel="stylesheet" href="css/tptpstil.css" />
   </head>
   <body>
-    <script src="tptpskripte.js" defer></script>
+    <header>
+      <div class="logo">PC<span>Tech</span></div>
+
+      <nav class="glavna-nav">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="sadrzaj.html" class="active">Sadržaj</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+          <li>
+            <a
+              href="https://github.com/Damba1123/Grupa22-TPTP-2026"
+              target="_blank"
+              class="github-link"
+              >GitHub
+              <img
+                src="images/githublogo1.png"
+                alt="Ovo je slika githuba"
+                id="github-logo"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!--  Potencijalno dugme za promjenu dark/light teme  -->
+      <button id="dark-tema" class="tema-btn">M</button>
+    </header>
+    <section class="uvod-sadrzaj" id="vrh">
+      <h1>SADRŽAJ</h1>
+    </section>
+    <main class="sadrzaj-stranica">
+      <section class="pc-mapa-kartica">
+        <h2>Interaktivna slika računara</h2>
+
+        <div class="pc-mapa-wrapper">
+          <img
+            src="images/unutrasnjostpc1.png"
+            alt="Unutrašnjost računara sa vidljivim komponentama"
+            usemap="#mapaRacunara"
+            class="pc-mapa-slika"
+          />
+          <!-- Prava image map, ostaje zbog pravila projekta -->
+          <map name="mapaRacunara">
+            <area shape="rect" coords="" href="" alt="Procesorska jedinica" />
+
+            <area shape="rect" coords="" href="" alt="Grafička kartica" />
+
+            <area shape="rect" coords="" href="" alt="RAM memorija" />
+          </map>
+          <!-- CSS zone koje se bolje skaliraju -->
+          <a href="#cpu" class="zona zona-cpu" title="Procesor"></a>
+          <a href="#gpu" class="zona zona-gpu" title="Grafička kartica"></a>
+          <a href="#ram" class="zona zona-ram" title="RAM memorija"></a>
+        </div>
+      </section>
+      <div class="linija"></div>
+      <section id="cpu" class="komponenta-sekcija">
+        <article class="opis-komponente">
+          <img src="images/cpu0.jpg" alt="Procesor" />
+          <h2>CPU - Central Processing Unit</h2>
+        </article>
+
+        <h3 id="intel-cpunaslov" class="cpunaslov">Intel procesori</h3>
+
+        <div class="proizvodi-grid">
+          <article class="komponenta-kartica1">
+            <img
+              src="images/i512400f.png"
+              alt="Intel Core i5 12400f procesor"
+            />
+            <h4>Intel Core i5 12400f</h4>
+            <p>
+              Intel Core i5-12400F ima 6 jezgri i 12 threadova, radi na 2.5 GHz
+              i pripada Alder Lake generaciji. Datum izlaska je Q1 2022. Average
+              Bench iznosi 98.1%, a rang je 113 od 1424 procesora, na osnovu
+              54.052 korisnička testa. Raspon rezultata, odnosno razlika između
+              95. i 5. percentila, iznosi 19.6%, što znači da su rezultati ovog
+              procesora prilično stabilni u različitim računarima.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica1">
+            <img
+              src="images/i514400f.png"
+              alt="Intel Core i5 14400f procesor"
+            />
+            <h4>Intel Core i5 14400f</h4>
+            <p>
+              Intel Core i5-14400F ima 10 jezgri i 16 threadova, radi na 2.5 GHz
+              i pripada Raptor Lake generaciji. Datum izlaska je približno Q1
+              2024. Average Bench iznosi 107%, a rang je 70 od 1424 procesora,
+              na osnovu 1.254 korisnička testa. Raspon rezultata, odnosno
+              razlika između 95. i 5. percentila, iznosi 15%, što pokazuje dosta
+              ujednačene rezultate.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica1">
+            <img
+              src="images/intel265.png"
+              alt="Intel Core Ultra 7 265K procesor"
+            />
+            <h4>Intel Core Ultra 7 265K</h4>
+            <p>
+              Intel Core Ultra 7 265K ima 20 jezgri i 20 threadova, radi na 3.9
+              GHz i pripada Arrow Lake generaciji. Datum izlaska je Q4 2024.
+              Average Bench iznosi 119%, a rang je 31 od 1424 procesora, na
+              osnovu 536 korisničkih testova. Raspon rezultata, odnosno razlika
+              između 95. i 5. percentila, iznosi 57.5%, što znači da rezultati
+              mogu dosta zavisiti od ostatka konfiguracije, hlađenja i
+              podešavanja sistema.
+            </p>
+          </article>
+        </div>
+
+        <h3 id="amd-cpunaslov" class="cpunaslov">AMD procesori</h3>
+
+        <div class="proizvodi-grid">
+          <article class="komponenta-kartica1">
+            <img src="images/ryzen5.png" alt="AMD Ryzen 5 5500 procesor" />
+            <h4>AMD Ryzen 5 5500</h4>
+            <p>
+              AMD Ryzen 5 5500 ima 6 jezgri i 12 threadova, radi na 3.6 GHz i
+              pripada Zen 3 generaciji. Datum izlaska je približno Q2 2022.
+              Average Bench iznosi 85.9%. Raspon rezultata, odnosno razlika
+              između 95. i 5. percentila, iznosi 29.5%, što znači da performanse
+              mogu malo više zavisiti od RAM memorije, matične ploče i
+              podešavanja sistema.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica1">
+            <img src="images/ryzen7.png" alt="AMD Ryzen 7 5700x" />
+            <h4>AMD Ryzen 7 5700x</h4>
+            <p>
+              AMD Ryzen 7 9800X3D ima 8 jezgri i 16 threadova, radi na 4.7 GHz i
+              pripada Zen 5 generaciji. Datum izlaska je Q4 2024. Average Bench
+              iznosi 128%, a rang je 10 od 1424 procesora, na osnovu 15.972
+              korisnička testa. Raspon rezultata, odnosno razlika između 95. i
+              5. percentila, iznosi 13%, što pokazuje vrlo stabilne rezultate u
+              različitim računarima.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica1">
+            <img src="images/ryzen7.png" alt="AMD Ryzen 7 9800X3D procesor" />
+            <h4>AMD Ryzen 7 9800X3D</h4>
+            <p>
+              AMD Ryzen 7 5700X ima 8 jezgri i 16 threadova, radi na 3.4 GHz i
+              pripada Zen 3 generaciji. Datum izlaska je približno Q2 2022.
+              Average Bench iznosi 96%, a rang je 137 od 1424 procesora, na
+              osnovu 13.351 korisničkog testa. Raspon rezultata, odnosno razlika
+              između 95. i 5. percentila, iznosi 25.8%, što znači da su
+              rezultati relativno ujednačeni.
+            </p>
+          </article>
+        </div>
+
+        <a href="#vrh" id="vrh-sadrzaj">Vrati se na vrh</a>
+      </section>
+      <div class="linija"></div>
+      <section id="gpu" class="komponenta-sekcija">
+        <article class="opis-komponente">
+          <img src="images/gpu0.jpg" alt="Grafička kartica" />
+          <h2>GPU - Graphics Processing Unit</h2>
+        </article>
+
+        <h3 id="nvidia-gpunaslov" class="gpunaslov">NVIDIA grafičke kartice</h3>
+
+        <div class="proizvodi-grid">
+          <article class="komponenta-kartica">
+            <img src="images/3050.png" alt="GeForce NVIDIA RTX 3050" />
+            <h4>GeForce NVIDIA RTX 3050</h4>
+            <p>
+              NVIDIA GeForce RTX 3050 je ulazna RTX kartica, zasnovana na Ampere
+              arhitekturi. Ima 8GB GDDR6 memorije i podržava ray tracing i DLSS,
+              ali je najviše za 1080p gaming na srednjim ili nižim postavkama.
+              UserBenchmark navodi Average Bench: 31%. GPU Monkey navodi 8GB
+              GDDR6 memorije, 128-bit memorijsku magistralu i memorijsku
+              propusnost od 224 GB/s.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica">
+            <img src="images/4060.png" alt="GeForce NVIDIA RTX 4060" />
+            <h4>GeForce NVIDIA RTX 4060</h4>
+            <p>
+              NVIDIA GeForce RTX 4060 je kartica srednje/niže klase iz RTX 40
+              serije, zasnovana na Ada Lovelace arhitekturi. Ima 8GB GDDR6
+              memorije, 128-bit magistralu, 3072 CUDA jezgre i TGP oko 115W.
+              UserBenchmark navodi Average Bench: 50.9%, rang 54 od 453 GPU-a.
+              Dobra je za 1080p gaming, DLSS 3 i energetski efikasne
+              konfiguracije.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica">
+            <img src="images/3080.png" alt="GeForce NVIDIA RTX 3080" />
+            <h4>GeForce NVIDIA RTX 3080</h4>
+            <p>
+              NVIDIA GeForce RTX 3080 je jaka kartica iz RTX 30 serije,
+              zasnovana na Ampere arhitekturi. Najčešće dolazi sa 10GB GDDR6X
+              memorije i namijenjena je za jak 1440p gaming i 4K gaming.
+              UserBenchmark navodi Average Bench: 78.9%, rang 23 od 453 GPU-a. U
+              odnosu na novije RTX 50 kartice nema DLSS 4/Multi Frame
+              Generation, ali je i dalje vrlo snažna kartica za klasični raster
+              gaming.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica">
+            <img src="images/5060.png" alt="GeForce NVIDIA RTX 5060" />
+            <h4>GeForce NVIDIA RTX 5060</h4>
+            <p>
+              NVIDIA GeForce RTX 5060 je novija Blackwell kartica iz RTX 50
+              serije. Ima 8GB GDDR7 memorije, 128-bit magistralu, 3840 CUDA
+              jezgri i podržava DLSS 4 sa Multi Frame Generation tehnologijom.
+              UserBenchmark navodi Average Bench: 61.2%. NVIDIA navodi da RTX
+              5060 koristi Blackwell arhitekturu, 8GB GDDR7 memorije, 3840 CUDA
+              jezgri i boost clock oko 2.50 GHz.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica">
+            <img src="images/msi5070.png" alt="GeForce NVIDIA RTX 5070" />
+            <h4>GeForce NVIDIA RTX 5070</h4>
+            <p>
+              NVIDIA GeForce RTX 5070 je Blackwell grafička kartica srednje više
+              klase. Ima 12GB GDDR7 memorije, 192-bit memorijsku magistralu,
+              6144 CUDA jezgre i boost clock oko 2.51 GHz. Namijenjena je
+              najviše za jak 1440p gaming, ray tracing i DLSS 4. UserBenchmark
+              navodi Effective Speed: +59%, Average Score: +76% i Overclocked
+              Score: +74%. NVIDIA navodi 12GB GDDR7 memorije i 672 GB/s
+              memorijske propusnosti.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica">
+            <img src="images/msi5080.png" alt="GeForce NVIDIA RTX 5080" />
+            <h4>GeForce NVIDIA RTX 5080</h4>
+            <p>
+              NVIDIA GeForce RTX 5080 je visoka klasa RTX 50 serije, zasnovana
+              na Blackwell arhitekturi. Ima 16GB GDDR7 memorije, 256-bit
+              magistralu, 10752 CUDA jezgre i boost clock oko 2.62 GHz.
+              Namijenjena je za 4K gaming, ray tracing, DLSS 4 i zahtjevnije
+              kreativne zadatke. UserBenchmark navodi Effective Speed: +124%,
+              Average Score: +172% i Overclocked Score: +173%. NVIDIA navodi
+              16GB GDDR7 memorije i 960 GB/s memorijske propusnosti.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica">
+            <img src="images/asus5090.png" alt="GeForce NVIDIA RTX 5090" />
+            <h4>GeForce NVIDIA RTX 5090</h4>
+            <p>
+              NVIDIA GeForce RTX 5090 je najjača kartica iz RTX 50 serije,
+              zasnovana na Blackwell arhitekturi. Ima 32GB GDDR7 memorije,
+              512-bit memorijsku magistralu i vrlo visoku propusnost memorije od
+              oko 1792 GB/s, pa je namijenjena za 4K gaming, ray tracing, AI rad
+              i profesionalne zadatke. UserBenchmark navodi Effective Speed:
+              +195%, Average Score: +281% i Overclocked Score: +295%. NVIDIA
+              navodi da RTX 5090 koristi Blackwell arhitekturu i 32GB GDDR7
+              memorije.
+            </p>
+          </article>
+        </div>
+
+        <h3 id="amd-gpunaslov" class="gpunaslov">AMD grafičke kartice</h3>
+
+        <div class="proizvodi-grid">
+          <article class="komponenta-kartica">
+            <img src="images/9070XT.png" alt="AMD Radeon RX 9070XT" />
+            <h4>AMD Radeon RX 9070XT</h4>
+            <p>
+              AMD Radeon RX 9070 XT je jaka moderna grafička kartica iz RX 9000
+              serije, zasnovana na RDNA 4 arhitekturi. Ima 16GB GDDR6 memorije i
+              namijenjena je za vrlo dobar 1440p gaming, a može se koristiti i
+              za 4K uz podešavanje detalja. UserBenchmark navodi Average Bench:
+              97.3%, rang 11 od 453 GPU-a. Tom’s Hardware navodi da RX 9070 XT
+              donosi snažne mainstream performanse, bolji ray tracing i AI
+              napredak u odnosu na ranije AMD generacije.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica">
+            <img src="images/rx5700.png" alt="AMD Radeon RX 5700" />
+            <h4>AMD Radeon RX 5700</h4>
+            <p>
+              AMD Radeon RX 5700 je starija AMD kartica iz RDNA 1 generacije.
+              Ima 8GB GDDR6 memorije i Navi 10 GPU, a bila je namijenjena kao
+              srednja klasa za 1080p i 1440p gaming. UserBenchmark navodi
+              Average Bench: 35.8%, rang 98 od 453 GPU-a. Technical City navodi
+              da je RX 5700 izašao 7. jula 2019. i da koristi RDNA 1.0
+              arhitekturu.
+            </p>
+          </article>
+
+          <article class="komponenta-kartica">
+            <img src="images/rx6500xt.png" alt="AMD Radeon RX 6500XT" />
+            <h4>AMD Radeon RX 6500XT</h4>
+            <p>
+              AMD Radeon RX 6500 XT je budžetska AMD grafička kartica iz RDNA 2
+              generacije. Obično dolazi sa 4GB GDDR6 memorije i više je
+              namijenjena osnovnom 1080p gamingu, ali nije dobra za novije
+              zahtjevne igre na visokim detaljima. UserBenchmark navodi Average
+              Bench: 21.1% i da je kartica oko 78.9% ispod vrha grupe. Technical
+              City navodi da je RX 6500 XT izašao 19. januara 2022. i da koristi
+              RDNA 2.0 arhitekturu.
+            </p>
+          </article>
+        </div>
+
+        <h3 id="intel-gpunaslov" class="gpunaslov">Intel grafičke kartice</h3>
+
+        <div class="proizvodi-grid">
+          <article class="komponenta-kartica">
+            <img src="images/b580.png" alt="Intel Arc B580" />
+            <h4>Intel Arc B580</h4>
+            <p>
+              Intel Arc B580 je Intelova grafička kartica novije generacije,
+              zasnovana na Xe2/Battlemage arhitekturi. Ima 12GB GDDR6 memorije,
+              što je dobro za novije igre koje traže više VRAM-a. UserBenchmark
+              navodi da je B580 oko 53.8% ispod vrha grupe, a iz poređenja se
+              vidi Average Bench: 46.1%. TechSpot navodi da je Arc B580 izašao
+              kao povoljna kartica sa 12GB VRAM-a i dobrim odnosom cijene i
+              performansi.
+            </p>
+          </article>
+        </div>
+
+        <a href="#vrh" id="vrh-sadrzaj">Vrati se na vrh</a>
+      </section>
+      <div class="linija"></div>
+      <!-- 5. RAM SEKCIJA -->
+      <section id="ram" class="komponenta-sekcija">
+        <article class="opis-komponente">
+          <img src="images/ram.jpg" alt="RAM memorija" />
+          <h2>RAM - Random Access Memory</h2>
+        </article>
+        <article class="komponenta-kartica">
+          <p class="ramnaslov">
+            8GB RAM-a je dovoljno za osnovni rad, internet, online nastavu,
+            gledanje videa i korištenje Office programa. 16GB je najbolji izbor
+            za većinu korisnika, posebno za gaming, više otvorenih programa,
+            browser sa mnogo tabova i ugodan svakodnevni rad. 32GB se
+            preporučuje za zahtjevnije korisnike koji rade video obradu,
+            programiranje, 3D alate, veće projekte ili često koriste više težih
+            programa odjednom. Više od 32GB RAM-a uglavnom je potrebno za
+            profesionalni rad, virtualne mašine, velike baze podataka, ozbilj
+          </p>
+        </article>
+
+        <a href="#vrh" id="vrh-sadrzaj">Vrati se na vrh</a>
+      </section>
+      <div class="linija"></div>
+      <!-- 6. TABELA -->
+      <description class="table-list">
+        <section class="tabela-sadrzaj">
+          <h2 id="h2-tabela">Poređenje komponenti</h2>
+
+          <table class="tabela-komponenti">
+            <thead>
+              <tr>
+                <th>Komponenta</th>
+                <th>Namjena</th>
+                <th>Primjer</th>
+                <th>Preporuka</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>CPU</td>
+                <td>Obrada podataka</td>
+                <td>Ryzen 5 / Intel i5</td>
+                <td>Gaming i svakodnevni rad</td>
+              </tr>
+
+              <tr>
+                <td>GPU</td>
+                <td>Obrada slike</td>
+                <td>RTX 4060 / RX 6600</td>
+                <td>Gaming i grafika</td>
+              </tr>
+
+              <tr>
+                <td>RAM</td>
+                <td>Privremena memorija</td>
+                <td>16GB DDR4</td>
+                <td>Dovoljno za većinu korisnika</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="lista-komponenti">
+          <h2>Vrste komponenti</h2>
+
+          <ul>
+            <li>
+              <a href="#cpu" class="list">Procesori</a>
+              <ul>
+                <li id="intel-cpunaslov">Intel</li>
+                <li id="amd-cpunaslov">AMD</li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#gpu" class="list">Grafičke kartice</a>
+              <ul>
+                <li id="nvidia-gpunaslov">NVIDIA</li>
+                <li id="amd-gpunaslov">AMD Radeon</li>
+                <li id="intel-gpunaslov">Intel Arc</li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="#ram" class="list">Memorija</a>
+
+              <ul id="ram01">
+                <li>DDR4</li>
+                <li>DDR5</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </description>
+    </main>
+    <script src="js/tptpskripte.js" defer></script>
   </body>
 </html>

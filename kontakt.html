@@ -1,82 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PC Tech | Kontakt</title>
-    <link rel="stylesheet" href="css/tptpstil.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/tptpstil.css" />
+  </head>
+  <body>
     <header>
-        <div class="logo">PC<span>Tech</span></div>
-        <nav class="glavna-nav">
-            <ul>
-                <li><a href="index.html">Početna</a></li>
-                <li><a href="sadrzaj.html">Sadržaj</a></li>
-                <li><a href="kontakt.html" class="active">Kontakt</a></li>
-                <li><a href="https://github.com/Damba1123/Grupa22-TPTP-2026" target="_blank" class="github-link">
-                    GitHub <img src="images/githublogo1.png" alt="git" id="github-logo">
-                </a></li>
-            </ul>
-        </nav>
-        <button id="dark-tema" class="tema-btn">Mod</button>
+      <div class="logo">PC<span>Tech</span></div>
+      <nav class="glavna-nav">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="sadrzaj.html">Sadržaj</a></li>
+          <li><a href="kontakt.html" class="active">Kontakt</a></li>
+          <li>
+            <a
+              href="https://github.com/Damba1123/Grupa22-TPTP-2026"
+              target="_blank"
+              class="github-link"
+            >
+              GitHub
+              <img src="images/githublogo1.png" alt="git" id="github-logo" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button id="dark-tema" class="tema-btn">Mod</button>
     </header>
 
     <main class="glavni-dio">
-        <nav class="sporedna-nav">
-            <div class="filter-sekcija">
-                <h3>Info</h3>
-                <p class="info-text";>Tu smo za sva pitanja!</p>
-            </div>
-            <div class="filter-sekcija">
-                <h3>Radno vrijeme</h3>
-                <ul class="podmeni">
-                    <li>Pon-Pet: 08-16h</li>
-                    <li>Subota: 09-14h</li>
-                </ul>
-            </div>
-        </nav>
+      <nav class="sporedna-nav">
+        <div class="filter-sekcija">
+          <h3>Info</h3>
+          <p id="info-tekst">Tu smo za sva pitanja!</p>
+        </div>
+        <div class="filter-sekcija">
+          <h3>Radno vrijeme</h3>
+          <ul class="podmeni">
+            <li>Pon-Pet: 08-16h</li>
+            <li>Subota: 09-14h</li>
+          </ul>
+        </div>
+      </nav>
 
-       <section class="kontakt-sadrzaj">
-    <div class="kontakt-kartica">
-        <h2>KONTAKTIRAJTE NAS</h2>
-        <form id="kontakt-forma" novalidate>
+      <section class="kontakt-sadrzaj">
+        <section class="kontakt-kartica">
+          <h2>KONTAKTIRAJTE NAS</h2>
+          <form id="kontakt-forma" novalidate>
             <div class="forma-red">
-                <div class="polje-grupa">
-                    <label for="ime">Ime</label>
-                    <input type="text" id="ime" placeholder="Vaše ime">
-                    <span class="greska" id="greska-ime"></span>
-                </div>
-                <div class="polje-grupa">
-                    <label for="prezime">Prezime</label>
-                    <input type="text" id="prezime" placeholder="Vaše prezime">
-                    <span class="greska" id="greska-prezime"></span>
-                </div>
+              <div class="polje-grupa">
+                <label for="ime">Ime</label>
+                <input type="text" id="ime" placeholder="Vaše ime" />
+                <span class="greska" id="greska-ime"></span>
+              </div>
+              <div class="polje-grupa">
+                <label for="prezime">Prezime</label>
+                <input type="text" id="prezime" placeholder="Vaše prezime" />
+                <span class="greska" id="greska-prezime"></span>
+              </div>
             </div>
 
             <div class="polje-grupa">
-                <label for="email">Email adresa</label>
-                <input type="email" id="email" placeholder="ime@example.com">
-                <span class="greska" id="greska-email"></span>
+              <label for="email">Email adresa</label>
+              <input type="email" id="email" placeholder="ime@example.com" />
+              <span class="greska" id="greska-email"></span>
             </div>
 
             <div class="polje-grupa">
-                <label for="poruka">Vaša poruka</label>
-                <textarea id="poruka" rows="4" placeholder="Kako vam možemo pomoći?"></textarea>
-                <span class="greska" id="greska-poruka"></span>
+              <label for="poruka">Vaša poruka</label>
+              <textarea
+                id="poruka"
+                rows="4"
+                placeholder="Kako vam možemo pomoći?"
+              ></textarea>
+              <span class="greska" id="greska-poruka"></span>
             </div>
 
-            <button type="submit" class="forma-submit-btn">POŠALJI PORUKU</button>
-        </form>
-        <div id="uspjeh-poruka"></div>
-    </div>
-</section>
+            <button type="submit" class="forma-submit-btn">
+              POŠALJI PORUKU
+            </button>
+          </form>
+          <div id="uspjeh-poruka"></div>
+        </section>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Grupa 22 | FET</p>
+      <p>&copy; 2026 Grupa 22 | FET</p>
     </footer>
 
     <script src="js/tptpskripte.js" defer></script>
-</body>
+  </body>
 </html>
