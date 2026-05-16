@@ -852,7 +852,7 @@ header {
 
   .popup-kupi-sadrzaj {
     width: 150px;
-    height: auto;
+    height: 700px;
     position: sticky;
     overflow-y: auto;
   }
