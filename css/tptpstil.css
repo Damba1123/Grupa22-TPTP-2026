@@ -821,9 +821,14 @@ header {
 /* TELEFON */
 @media (max-width: 600px) {
   .glavna-nav ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: block;
     margin: 0;
+    text-align: center;
+    padding: 0;
+  }
+
+  .glavna-nav li {
+    margin-bottom: 6px;
   }
 
   .tema-btn {
@@ -847,15 +852,23 @@ header {
 
   .popup-kupi-sadrzaj {
     width: 150px;
-    height: 600px;
+    height: auto;
     position: sticky;
-    overflow-y: none;
-    overflow-x: none;
+    overflow-y: auto;
   }
+
+  .korpa-artikal img {
+    width: 40px;
+  }
+
+  .korpa-artikal p {
+    font-size: 12px;
+  }
+
   .popup {
     overflow-x: none;
     z-index: 4000;
-    scale: 0.6;
+    scale: 0.75;
   }
   #info-tekst {
     display: block;
@@ -908,6 +921,10 @@ header {
   }
   .uvod-sadrzaj {
     scale: 0.8;
+  }
+
+  .tabela-komponenti {
+    scale: 0.82;
   }
 }
 
