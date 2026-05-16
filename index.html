@@ -10,6 +10,7 @@
     <header>
       <div class="logo">PC<span>Tech</span></div>
 
+      <!-- GLAVNA NAVIGACIJA -->
       <nav class="glavna-nav">
         <ul>
           <li><a href="index.html" class="active">Početna</a></li>
@@ -30,17 +31,15 @@
           </li>
         </ul>
       </nav>
-      <!--  Potencijalno dugme za promjenu dark/light teme  -->
+      <!--  Dugme za promjenu dark/light teme  -->
       <button id="dark-tema" class="tema-btn">Mod</button>
     </header>
-
-    <aside class="popup3">...</aside>
 
     <aside class="popup">
       <!-- Ovo ce biti zatamljena popup pozadina  -->
       <div class="popup-sadrzaj">
         <!-- Ovo ce biti sadržaj popup prozora -->
-        <button class="popup-zatvori">X</button>
+        <button class="popup-zatvori">x</button>
         <h2 id="popup-naslov"></h2>
         <p id="popup-opis"></p>
       </div>
@@ -64,7 +63,7 @@
             Svi Artikli
           </button>
         </div>
-
+        <!--  FILTER DIO, PROCESOR  -->
         <div class="filter-sekcija">
           <h3>Procesori (CPU)</h3>
           <div class="filter-grupa">
@@ -76,7 +75,7 @@
             </button>
           </div>
         </div>
-
+        <!--  FILTER DIO, GRAFICKA  -->
         <div class="filter-sekcija">
           <h3>Grafičke kartice(GPU)</h3>
           <div class="filter-grupa">
@@ -91,7 +90,7 @@
             </button>
           </div>
         </div>
-
+        <!--  FILTER DIO, MEMORIJA  -->
         <div class="filter-sekcija">
           <h3>Memorija</h3>
           <div class="filter-grupa">
@@ -109,7 +108,7 @@
             </button>
           </div>
         </div>
-
+        <!--  FILTER DIO, PRONADJENI BROJ ARTIKALA  -->
         <div class="status-info">
           <p>Pronađeno: <span id="brojac">0</span></p>
         </div>
@@ -133,7 +132,7 @@
           <p class="opis">Intel Core Ultra 265 | RTX 5070</p>
           <button class="kupi">Kupi</button>
         </article>
-
+        <!-- Artikl 1 -->
         <article
           class="kartica"
           data-cijena="9999"
@@ -151,7 +150,7 @@
           <p class="opis">AMD Ryzen 7 | NVIDIA RTX 5090</p>
           <button class="kupi">Kupi</button>
         </article>
-
+        <!-- Artikl 2 -->
         <article
           class="kartica"
           data-cijena="5000"
@@ -169,7 +168,7 @@
           <p class="opis">AMD Ryzen 7 | AMD Radeon RX 9070XT</p>
           <button class="kupi">Kupi</button>
         </article>
-
+        <!-- Artikl 3 i tako dalje do -->
         <article
           class="kartica"
           data-cijena="4750"
@@ -200,7 +199,7 @@
           data-slika="images/le2.png"
           ;
         >
-          <img src="images/le2.png" alt="Low end PC" />
+          <img src="images/le2.png" alt="Low end PC" loading="lazy" />
           <p class="cijena">1200 KM</p>
           <p class="opis">AMD Ryzen 5 | Radeon RX 5700</p>
           <button class="kupi">Kupi</button>
@@ -218,7 +217,7 @@
           data-slika="images/le1.png"
           ;
         >
-          <img src="images/le1.png" alt="Low end PC" />
+          <img src="images/le1.png" alt="Low end PC" loading="lazy" />
           <p class="cijena">1400 KM</p>
           <p class="opis">AMD Ryzen 5 | Radeon RX 6500XT</p>
           <button class="kupi">Kupi</button>
@@ -236,7 +235,7 @@
           data-slika="images/le3.png"
           ;
         >
-          <img src="images/le3.png" alt="Low end PC" />
+          <img src="images/le3.png" alt="Low end PC" loading="lazy" />
           <p class="cijena">1450 KM</p>
           <p class="opis">Ryzen 5 | Radeon RX 5700</p>
           <button class="kupi">Kupi</button>
@@ -254,7 +253,7 @@
           data-slika="images/me5.png"
           ;
         >
-          <img src="images/me5.png" alt="Mid end PC" />
+          <img src="images/me5.png" alt="Mid end PC" loading="lazy" />
           <p class="cijena">3500 KM</p>
           <p class="opis">Intel core i9 | Radeon RX 5700</p>
           <button class="kupi">Kupi</button>
@@ -272,7 +271,7 @@
           data-slika="images/me.png"
           ;
         >
-          <img src="images/me.png" alt="Mid end PC" />
+          <img src="images/me.png" alt="Mid end PC" loading="lazy" />
           <p class="cijena">2800 KM</p>
           <p class="opis">Intel i7 | NVIDIA RTX 5060 Ti</p>
           <button class="kupi">Kupi</button>
@@ -290,7 +289,7 @@
           data-slika="images/me3.png"
           ;
         >
-          <img src="images/me3.png" alt="Mid end PC" />
+          <img src="images/me3.png" alt="Mid end PC" loading="lazy" />
           <p class="cijena">2450 KM</p>
           <p class="opis">AMD Ryzen 7 | NVIDIA RTX 5060</p>
           <button class="kupi">Kupi</button>
@@ -308,7 +307,7 @@
           data-slika="images/me2.png"
           ;
         >
-          <img src="images/me2.png" alt="Mid end PC" />
+          <img src="images/me2.png" alt="Mid end PC" loading="lazy" />
           <p class="cijena">1700 KM</p>
           <p class="opis">Intel Core i5 | NVIDIA RTX 4060,</p>
           <button class="kupi">Kupi</button>
@@ -326,7 +325,7 @@
           data-slika="images/me1.png"
           ;
         >
-          <img src="images/me1.png" alt="Mid end PC" />
+          <img src="images/me1.png" alt="Mid end PC" loading="lazy" />
           <p class="cijena">2100 KM</p>
           <p class="opis">Ryzen 5 | Intel ARC B580,</p>
           <button class="kupi">Kupi</button>
@@ -341,14 +340,123 @@
           data-storage="1tb"
           data-opis="CPU: Intel Core i5 14400F,GPU: NVIDIA GeForce RTX 5060, 16GB RAM, 1TB NVMe SSD, Case: Skytech Gaming Archangel 5"
           data-naslov="Mid end PC"
-          data-slika="images/me1.png"
+          data-slika="images/me0.png"
           ;
         >
-          <img src="images/me0.png" alt="Mid end PC" />
+          <img src="images/me0.png" alt="Mid end PC" loading="lazy" />
           <p class="cijena">1950 KM</p>
           <p class="opis">Intel Core i5 | NVIDIA RTX 5060,</p>
           <button class="kupi">Kupi</button>
         </article>
+
+        <article
+          class="kartica"
+          data-cijena="2100"
+          data-cpu="intel"
+          data-gpu="amd"
+          data-ram="16gb"
+          data-storage="1tb"
+          data-opis="CPU: Intel Core i5 13100,GPU: AMD Radeon RX 9060XT, 16GB RAM, 1TB NVMe SSD, Case: Unkown"
+          data-naslov="Mid end PC"
+          data-slika="images/me8.png"
+          ;
+        >
+          <img src="images/me8.png" alt="Mid end PC" loading="lazy" />
+          <p class="cijena">2100 KM</p>
+          <p class="opis">Intel Core i5 | AMD Radeon RX 9060XT,</p>
+          <button class="kupi">Kupi</button>
+        </article>
+
+        <article
+          class="kartica"
+          data-cijena="750"
+          data-cpu="intel"
+          data-gpu="amd"
+          data-ram="16gb"
+          data-storage="512gb"
+          data-opis="CPU: Intel Core i7 3770,GPU: AMD Radeon RX 590, 16GB RAM, 512GB NVMe SSD, Case: Qehi Prebuilt"
+          data-naslov="Low end PC"
+          data-slika="images/le7.png"
+          ;
+        >
+          <img src="images/le7.png" alt="Low end PC" loading="lazy" />
+          <p class="cijena">750 KM</p>
+          <p class="opis">Intel Core i7 | AMD Radeon RX 590,</p>
+          <button class="kupi">Kupi</button>
+        </article>
+
+        <article
+          class="kartica"
+          data-cijena="2400"
+          data-cpu="intel"
+          data-gpu="amd"
+          data-ram="32gb"
+          data-storage="2TB"
+          data-opis="CPU: Intel Core i3 13100 3770,GPU: AMD Radeon RX 7800XT, 32GB RAM, 2TB M.2 SSD, Case: Cooler Master NR2 Pro"
+          data-naslov="High end PC"
+          data-slika="images/he5.png"
+          ;
+        >
+          <img src="images/he5.png" alt="High end PC" loading="lazy" />
+          <p class="cijena">2400 KM</p>
+          <p class="opis">Intel Core i3 | AMD Radeon RX 7800XT</p>
+          <button class="kupi">Kupi</button>
+        </article>
+
+        <article
+          class="kartica"
+          data-cijena="5199"
+          data-cpu="amd"
+          data-gpu="nvidia"
+          data-ram="32gb"
+          data-storage="2TB"
+          data-opis="CPU: AMD Ryzen 9 7900X,GPU: NVIDIA RTX 4080 Super, 32GB RAM, 2TB M.2 SSD, Case: Velztorm Aciex"
+          data-naslov="High end PC"
+          data-slika="images/he7.png"
+          ;
+        >
+          <img src="images/he7.png" alt="High end PC" loading="lazy" />
+          <p class="cijena">5199 KM</p>
+          <p class="opis">AMD Ryzen 9 | NVIDIA RTX 4080 Super</p>
+          <button class="kupi">Kupi</button>
+        </article>
+
+        <article
+          class="kartica"
+          data-cijena="4199"
+          data-cpu="intel"
+          data-gpu="amd"
+          data-ram="16gb"
+          data-storage="1TB"
+          data-opis="CPU: Intel Core i5 14600K,GPU: AMD Radeon RX 7900XTX, 16GB RAM, 1TB M.2 SSD, Case: Cooler Master TD5 Pro"
+          data-naslov="High end PC"
+          data-slika="images/he6.png"
+          ;
+        >
+          <img src="images/he6.png" alt="High end PC" loading="lazy" />
+          <p class="cijena">4199 KM</p>
+          <p class="opis">Intel Core i5 | AMD Radeon RX 7900XTX</p>
+          <button class="kupi">Kupi</button>
+        </article>
+
+        <article
+          class="kartica"
+          data-cijena="2400"
+          data-cpu="amd"
+          data-gpu="nvidia"
+          data-ram="32gb"
+          data-storage="1TB"
+          data-opis="CPU: Ryzen 5 5600X ,GPU:NVIDIA GeForce RTX 2080 Supe, 32GB RAM, 1TB M.2 SSD, Case: Cooler Master TD5 Pro"
+          data-naslov="Mid end PC"
+          data-slika="images/me9.png"
+          ;
+        >
+          <img src="images/me9.png" alt="Mid end PC" loading="lazy" />
+          <p class="cijena">2400 KM</p>
+          <p class="opis">AMD Ryzen 5 | NVIDIA RTX 2080 Super</p>
+          <button class="kupi">Kupi</button>
+        </article>
+        <!-- Kraj artikala -->
       </section>
     </main>
     <script src="js/tptpskripte.js" defer></script>

@@ -4,15 +4,22 @@
   --popup: #151b2e;
   --sporedna: #00d4ff;
   --akcent: #2563eb;
+  --header: #1e293b;
+  --border: #eaf2ff;
+  --k-hover: #6adff7;
+  --tekst-hover: #000000;
+  --kontakt-boja: #00d4ff;
+  --kontakt-border: #ffffff33;
+  --mapa-border: #00d4ff;
+  --vrh: #00d4ff;
+  --kontakt: #151b2e;
 }
-
+/* POCETAK, POZADINA */
 body {
   background-color: var(--pozadina);
   color: var(--tekst);
   font-family: "Andale Mono", monospace;
 }
-
-
 
 .glavni-dio {
   display: grid;
@@ -20,7 +27,7 @@ body {
   gap: 40px;
   padding: 40px 20px 40px 0;
 }
-
+/* KARTICE SA RACUNARIMA */
 .racunari {
   display: grid;
   grid-template-columns: repeat(2, 350px);
@@ -34,7 +41,7 @@ body {
 .kartica {
   position: relative;
   height: 350px;
-  border: 3px solid #ffffffee;
+  border: 3px solid var(--border);
   border-radius: 15px;
   padding: 30px;
   background-color: var(--sporedna);
@@ -93,8 +100,10 @@ body {
 .kartica:hover {
   transform: scale(1.03);
   cursor: pointer;
-  background-color: #6adff7;
+  background-color: var(--k-hover);
 }
+
+/* POPUP,KLIKOM NA KARTICE */
 .popup {
   position: fixed;
   display: none;
@@ -118,11 +127,12 @@ body {
   background-color: var(--popup);
   padding: 10px;
   border-radius: 10px;
-  border: 2.5px solid white;
+  border: 2.5px solid var(--border);
   width: 600px;
   height: 350px;
 }
 
+/* POPUP ZA KORPU */
 .popup-kupi {
   position: fixed;
   display: none;
@@ -233,15 +243,15 @@ body {
   background-color: rgba(230, 25, 25, 0.9);
 }
 
-/* DIO KODA ZA STILIZIRANJE GLAVNE NAVIGACIJE */
+/* STILIZIRANJE GLAVNE NAVIGACIJE */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
-  background-color: #1e293b; /* Tamna boja za moderni izgled */
+  background-color: var(--header); /* Tamna boja za moderni izgled */
   color: white;
-  position: sticky;
+  position: static;
   top: 0;
   z-index: 1000;
 }
@@ -285,9 +295,7 @@ header {
   border-bottom: 2px solid #38bdf8;
 }
 
-/* DIO KODA ZA STILIZIRANJE GLAVNE NAVIGACIJE */
-
-/* DIO KODA ZA STILIZIRANJE FILTERA */
+/* STILIZIRANJE FILTERA */
 
 .sporedna-nav h3 {
   text-transform: uppercase;
@@ -322,7 +330,7 @@ header {
 }
 .filter-sekcija {
   margin-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--header);
   padding-bottom: 10px;
 }
 
@@ -345,8 +353,8 @@ header {
 
 .filter-btn:hover,
 .aktivan-filter {
-  background: var(--sporedna);
-  color: var(--pozadina);
+  background: var(--kontakt-boja);
+  color: var(--tekst-hover);
 }
 
 .filter-btn.glavno {
@@ -356,9 +364,7 @@ header {
   background: var(--akcent);
 }
 
-/* DIO KODA ZA STILIZIRANJE FILTERA */
-
-/* DIO KODA ZA STILIZIRANJE KONTAKT FORME */
+/* STILIZIRANJE KONTAKT FORME */
 
 .kontakt-sadrzaj {
   flex: 3;
@@ -367,8 +373,8 @@ header {
 }
 
 .kontakt-kartica {
-  background-color: var(--popup);
-  border: 3px solid var(--sporedna);
+  background-color: var(--kontakt);
+  border: 3px solid var(--kontakt-boja);
   border-radius: 15px;
   padding: 35px;
   width: 100%;
@@ -379,7 +385,7 @@ header {
 
 .kontakt-kartica h2 {
   font-family: "Andale Mono", monospace;
-  color: var(--sporedna);
+  color: var(--kontakt-boja);
   text-align: center;
   margin-bottom: 30px;
   text-transform: uppercase;
@@ -411,9 +417,9 @@ header {
 /* Unosi (Input i Textarea) */
 .polje-grupa input,
 .polje-grupa textarea {
-  background-color: rgba(11, 16, 32, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background-color: var(--pozadina);
+  border: 1px solid var(--kontakt-border);
+  color: var(--tekst);
   padding: 12px;
   border-radius: 6px;
   font-family: "Andale Mono", monospace;
@@ -448,12 +454,12 @@ header {
 }
 
 .forma-submit-btn:hover {
-  background-color: var(--sporedna);
+  background-color: var(--kontakt-boja);
   color: var(--pozadina);
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
 }
-
+/* Polje za unos, error  */
 .greska {
   color: #ff4444;
   font-size: 11px;
@@ -487,7 +493,7 @@ header {
   display: block;
   color: var(--sporedna);
 }
-
+/* Polje za unos, uspjesno */
 #uspjeh-poruka {
   display: none; /* Inicijalno sakriveno bez inline stila */
   margin-top: 25px;
@@ -504,9 +510,7 @@ header {
   display: block !important;
 }
 
-/* DIO KODA ZA STILIZIRANJE KONTAKT FORME */
-
-/* DIO KODA ZA STILIZIRANJE SADRZAJ STRANICE */
+/* STILIZIRANJE SADRZAJ STRANICE */
 
 .uvod-sadrzaj {
   text-align: center;
@@ -537,8 +541,8 @@ header {
   width: 700px;
   height: 700px;
   object-fit: contain;
-  border: 5px solid rgba(0, 212, 255, 0.35);
-  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
+  border: 5px solid var(--mapa-border);
+  box-shadow: var(--mapa-border) 0px 20px 30px -10px;
 }
 
 .zona {
@@ -555,13 +559,15 @@ header {
 }
 
 .zona-cpu {
+  position: absolute;
   top: 27%;
-  left: 36%;
+  left: 35%;
   width: 8%;
   height: 13%;
 }
 
 .zona-gpu {
+  position: absolute;
   top: 48%;
   left: 28.2%;
   width: 32.4%;
@@ -569,6 +575,7 @@ header {
 }
 
 .zona-ram {
+  position: absolute;
   top: 21%;
   left: 46%;
   width: 3%;
@@ -578,10 +585,11 @@ header {
 .linija {
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: var(--tekst);
   margin: 30px 0;
 }
 
+/* DIO SADRZAJ STRANICE ZA OPIS KOMPONENTI */
 .opis-komponente {
   display: flex;
   align-items: center;
@@ -591,7 +599,7 @@ header {
   width: 350px;
   height: 350px;
   object-fit: cover;
-  border: 2.5px solid var(--sporedna);
+  border: 2.5px solid var(--kontakt-boja);
 }
 .opis-komponente h2 {
   color: var(--tekst);
@@ -610,14 +618,14 @@ header {
 .komponenta-kartica p {
   text-align: left;
 }
-
+/* DUGME SKOCI NA VRH */
 #vrh-sadrzaj {
   display: block;
   width: fit-content;
   font-size: 20px;
   margin-left: auto;
-  color: white;
-  border: 1px solid white;
+  color: var(--vrh);
+  border: 1px solid var(--kontakt-boja);
   border-radius: 5px;
   padding: 5px;
   transition:
@@ -627,8 +635,8 @@ header {
 }
 #vrh-sadrzaj:hover {
   cursor: pointer;
-  color: var(--sporedna);
-  border-color: var(--sporedna);
+  color: var(--tekst);
+  border-color: var(--kontakt-boja);
   transform: scale(1.04);
 }
 
@@ -666,7 +674,7 @@ header {
 }
 
 #nvidia-gpunaslov {
-  color: greenyellow;
+  color: rgb(147, 222, 34);
 }
 .table-list {
   display: flex;
@@ -676,16 +684,16 @@ header {
   font-size: 20px;
   text-align: left;
 }
-
+/* SADRZAJ, LISTA */
 .lista-komponenti {
-  border: 2px solid white;
+  border: 2px solid var(--border);
   border-radius: 7px;
   width: 250px;
   margin-left: auto;
 }
-
+/* SADRZAJ, TABELA */
 .tabela-komponenti {
-  border: 2px solid white;
+  border: 2px solid var(--border);
 }
 
 .lista-komponenti h2 {
@@ -696,7 +704,7 @@ header {
 }
 
 .list {
-  color: var(--sporedna);
+  color: var(--kontakt-boja);
 }
 
 .komponenta-kartica img {
@@ -706,12 +714,13 @@ header {
 }
 
 .komponenta-kartica1 img {
-  width: 220px;
+  width: 240px;
   height: 240px;
   object-fit: cover;
 }
 
-/* DIO KODA ZA STILIZIRANJE SADRZAJ STRANICE */
+/* DIO ZA SKALIRANJE POTREBNO ZA MANJE UREDJAJE */
+/* TABLET I SLICNO */
 
 @media (max-width: 900px) {
   .racunari {
@@ -734,7 +743,9 @@ header {
     z-index: 4000;
     scale: 0.8;
   }
-
+  .popup-kupi {
+    width: 200px;
+  }
   .kupi {
     left: 15px;
     right: 15px;
@@ -807,8 +818,18 @@ header {
     object-fit: cover;
   }
 }
-
+/* TELEFON */
 @media (max-width: 600px) {
+  .glavna-nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+  }
+
+  .tema-btn {
+    display: flex;
+  }
+
   .racunari {
     grid-template-columns: 1fr;
     padding-left: 0;
@@ -816,21 +837,25 @@ header {
   }
 
   .kartica {
-    width: 300px;
+    width: 250px;
   }
 
   .kartica img {
-    height: 200px;
-    width: 230px;
+    height: 180px;
+    width: 200px;
   }
 
   .popup-kupi-sadrzaj {
-    width: 200px;
+    width: 150px;
     height: 600px;
+    position: sticky;
+    overflow-y: none;
+    overflow-x: none;
   }
   .popup {
+    overflow-x: none;
     z-index: 4000;
-    scale: 0.8;
+    scale: 0.6;
   }
   #info-tekst {
     display: block;
@@ -838,8 +863,8 @@ header {
   }
 
   .pc-mapa-wrapper img {
-    width: 350px;
-    height: 350px;
+    width: 275px;
+    height: 275px;
   }
 
   .opis-komponente h2 {
@@ -847,16 +872,12 @@ header {
     font-size: 30px;
   }
 
-  .tema-btn {
-    margin-top: -75px;
-  }
-
   .table-list {
     display: block;
   }
 
   .proizvodi-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .komponenta-kartica img {
@@ -864,11 +885,29 @@ header {
     height: 120px;
     object-fit: contain;
   }
-}
-@media (min-width: 1400px) {
-  .racunari {
-    max-width: 1200px;
-    gap: 140px;
+
+  .opis-komponente img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .komponenta-kartica img {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .komponenta-kartica1 img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+
+  .opis-komponente h2 {
+    font-size: 20px;
+  }
+  .uvod-sadrzaj {
+    scale: 0.8;
   }
 }
 
@@ -883,14 +922,25 @@ header {
   }
 }
 
-/*Svijetle boje koje se aktiviraju preko klase */
+/* SVJETLA TEMA, AKTIVARANA PREKO JS */
 body.light-theme {
-  --pozadina: #f1f5f9; 
-  --tekst: #0f172a;    
-  --popup: #ffffff;    
-  --sporedna: #0284c7;  
-  --akcent: #1d4ed8;
+  --pozadina: #dde2e7;
+  --tekst: #0f172a;
+  --popup: #ffffff;
+  --sporedna: #e2e6ea;
+  --akcent: #818694;
+  --border: #00d4ff; /* obični border */
+  --asd: #78889e; /* jači border */
+  --k-hover: #cbd5e1; /* horizontalne linije */
+  --header: #95a2b3;
+  --tekst-hover: #ffffff;
+  --kontakt-boja: #57585a;
+  --kontakt-border: #18181833;
+  --mapa-border: #67c3d6;
+  --vrh: hsl(220, 2%, 35%);
+  --kontakt: #ebebeb;
 }
+
 .tema-btn {
   background: transparent;
   border: 2px solid var(--sporedna);
@@ -907,15 +957,13 @@ body.light-theme {
   box-shadow: 0 0 10px rgba(0, 212, 255, 0.1);
 }
 
-/* Efekat kada se pređe mišem (Hover) */
 .tema-btn:hover {
   background: var(--sporedna);
-  color: var(--pozadina);
+  color: var(--tekst-hover);
   box-shadow: 0 0 15px var(--sporedna);
   transform: translateY(-2px);
 }
 
-/* Efekat kada se klikne na dugme (Aktivno stanje) */
 .tema-btn:active {
   transform: translateY(0);
 }
