@@ -12,17 +12,7 @@ body {
   font-family: "Andale Mono", monospace;
 }
 
-.tema-btn {
-  background-color: white;
-  border-radius: 10px;
-  border: none;
-  scale: 1.15;
-  transition: 0.3s all;
-}
-.tema-btn:hover {
-  cursor: pointer;
-  background-color: var(--pozadina);
-}
+
 
 .glavni-dio {
   display: grid;
@@ -891,4 +881,41 @@ header {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/*Svijetle boje koje se aktiviraju preko klase */
+body.light-theme {
+  --pozadina: #f1f5f9; 
+  --tekst: #0f172a;    
+  --popup: #ffffff;    
+  --sporedna: #0284c7;  
+  --akcent: #1d4ed8;
+}
+.tema-btn {
+  background: transparent;
+  border: 2px solid var(--sporedna);
+  color: var(--sporedna);
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Andale Mono", monospace;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+/* Efekat kada se pređe mišem (Hover) */
+.tema-btn:hover {
+  background: var(--sporedna);
+  color: var(--pozadina);
+  box-shadow: 0 0 15px var(--sporedna);
+  transform: translateY(-2px);
+}
+
+/* Efekat kada se klikne na dugme (Aktivno stanje) */
+.tema-btn:active {
+  transform: translateY(0);
 }

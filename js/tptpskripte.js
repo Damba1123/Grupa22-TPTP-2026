@@ -186,3 +186,28 @@ function resetujGreske() {
 }
 
 // --- KONTAKT FORMA VALIDACIJA ) ---
+
+// --- DIO ZA PROMJENU TEME (DARK/LIGHT MOD) ---
+
+const dugmeTema = document.getElementById("dark-tema");
+
+if (dugmeTema) {
+  // 1. Provjeri da li je korisnik već ranije izabrao svijetlu temu
+  if (localStorage.getItem("tema") === "light") {
+    document.body.classList.add("light-theme");
+  }
+
+  // 2. Slušaj klik na dugme Mod
+  dugmeTema.addEventListener("click", () => {
+    // Toggle (ako ima klase skini je, ako nema dodaj je)
+    document.body.classList.toggle("light-theme");
+
+    // 3. Spasi trenutno stanje u memoriju browsera da se ne poništi pri osvježavanju
+    if (document.body.classList.contains("light-theme")) {
+      localStorage.setItem("tema", "light");
+    } else {
+      localStorage.setItem("tema", "dark");
+    }
+  });
+}
+// --- DIO ZA PROMJENU TEME (DARK/LIGHT MOD) ---
