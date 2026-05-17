@@ -255,4 +255,45 @@ window.addEventListener("click", function (event) {
   if (event.target === popupkupi) {
     popupkupi.classList.remove("aktivan");
   }
+  if (popupkupi.classList.contains("aktivan")) {
+    const unutrašnjostKorpe = document.querySelector(".popup-kupi-sadrzaj");
+    if (unutrašnjostKorpe && !unutrašnjostKorpe.contains(event.target) && !event.target.classList.contains("kupi")) {
+      popupkupi.classList.remove("aktivan");
+    }
+  }
+});
+
+
+//  funkcija za racunanje i prikaz ukupne cijene u korpi
+function azurirajUkupnuCijenu() {
+  let ukupno = 0;
+  const artikliUKorpi = document.querySelectorAll(".korpa-artikal");
+  
+  artikliUKorpi.forEach(artikal => {
+    const cijenaTekst = artikal.querySelector("p:last-child").textContent;
+    const cijenaBroj = parseFloat(cijenaTekst.replace(" KM", ""));
+    ukupno += cijenaBroj;
+  });
+  
+  let ukupnoElement = document.getElementById("korpa-ukupno");
+  if (!ukupnoElement) {
+    ukupnoElement = document.createElement("div");
+    ukupnoElement.id = "korpa-ukupno";
+    ukupnoElement.style.fontWeight = "bold";
+    ukupnoElement.style.marginTop = "15px";
+    ukupnoElement.style.textAlign = "right";
+    const kontejner = document.querySelector(".popup-kupi-sadrzaj");
+    if (kontejner) kontejner.appendChild(ukupnoElement);
+  }
+  ukupnoElement.innerHTML = `Ukupno za platiti: <span style="color: #007BFF;">${ukupno} KM</span>`;
+}
+
+
+document.querySelectorAll(".kupi").forEach(dugme => {
+  dugme.addEventListener("click", azurirajUkupnuCijenu);
+});
+document.addEventListener("click", function(e) {
+  if (e.target && e.target.classList.contains("dugme-ukloni")) {
+    setTimeout(azurirajUkupnuCijenu, 10);
+  }
 });
