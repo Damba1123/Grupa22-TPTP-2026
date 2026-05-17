@@ -116,9 +116,11 @@ const kontaktForma = document.getElementById("kontakt-forma");
 if (kontaktForma) {
   // Kada se klikne na dugme za resetovanje, brisu se sve greske i poruka uspjeha
   kontaktForma.addEventListener("reset", function () {
-    document.querySelectorAll(".input-greska").forEach((el) => el.classList.remove("input-greska"));
+    document
+      .querySelectorAll(".input-greska")
+      .forEach((el) => el.classList.remove("input-greska"));
     document.querySelectorAll(".greska").forEach((el) => (el.textContent = ""));
-    
+
     const uspjehPoruka = document.getElementById("uspjeh-poruka");
     if (uspjehPoruka) {
       uspjehPoruka.classList.remove("vidljivo");
@@ -144,7 +146,9 @@ if (kontaktForma) {
     let greske = 0;
 
     // Ocisti sve prethodne crvene greske prije nove provjere
-    document.querySelectorAll(".input-greska").forEach((el) => el.classList.remove("input-greska"));
+    document
+      .querySelectorAll(".input-greska")
+      .forEach((el) => el.classList.remove("input-greska"));
     document.querySelectorAll(".greska").forEach((el) => (el.textContent = ""));
     if (uspjehPoruka) {
       uspjehPoruka.classList.remove("vidljivo");
@@ -180,7 +184,8 @@ if (kontaktForma) {
     if (telefon && !telefonPattern.test(telefon.value.trim())) {
       telefon.classList.add("input-greska");
       const greskaSpan = document.getElementById("greska-telefon");
-      if (greskaSpan) greskaSpan.textContent = "Unesite ispravan broj telefona.";
+      if (greskaSpan)
+        greskaSpan.textContent = "Unesite ispravan broj telefona.";
       greske++;
     }
 
@@ -196,7 +201,8 @@ if (kontaktForma) {
     if (poruka && poruka.value.trim().length < 10) {
       poruka.classList.add("input-greska");
       const greskaSpan = document.getElementById("greska-poruka");
-      if (greskaSpan) greskaSpan.textContent = "Poruka mora imati barem 10 znakova.";
+      if (greskaSpan)
+        greskaSpan.textContent = "Poruka mora imati barem 10 znakova.";
       greske++;
     }
 
@@ -204,10 +210,10 @@ if (kontaktForma) {
     if (greske === 0 && uspjehPoruka) {
       // Upisivanje teksta poruke
       uspjehPoruka.innerHTML = `Hvala Vam, <strong>${ime.value}</strong>! Vaš upit vezan za <strong>${razlog.options[razlog.selectedIndex].text}</strong> je uspješno poslan. Odgovorićemo Vam na <strong>${email.value}</strong> ubrzo.`;
-      
+
       // Dodavanje klase .vidljivo (prikazivanje zelenog prozora preko CSS-a)
       uspjehPoruka.classList.add("vidljivo");
-      
+
       // Rucno praznjenje unosa kako bi zelena poruka ostala vidljiva na ekranu
       ime.value = "";
       prezime.value = "";
@@ -245,3 +251,64 @@ if (dugmeTema) {
   });
 }
 // --- DIO ZA PROMJENU TEME (DARK/LIGHT MOD) ---
+
+// zatvaranje pop-up prozora klikom na prazan prostor van njega
+window.addEventListener("click", function (event) {
+  // Ako je kliknuto na dugme Ukloni, ne zatvaraj korpu
+  if (event.target.classList.contains("dugme-ukloni")) {
+    return;
+  }
+
+  if (event.target === popup) {
+    popup.classList.remove("aktivan");
+  }
+
+  if (event.target === popupkupi) {
+    popupkupi.classList.remove("aktivan");
+  }
+
+  if (popupkupi.classList.contains("aktivan")) {
+    const unutrasnjostKorpe = document.querySelector(".popup-kupi-sadrzaj");
+
+    if (
+      unutrasnjostKorpe &&
+      !unutrasnjostKorpe.contains(event.target) &&
+      !event.target.classList.contains("kupi")
+    ) {
+      popupkupi.classList.remove("aktivan");
+    }
+  }
+});
+
+//  funkcija za racunanje i prikaz ukupne cijene u korpi
+function azurirajUkupnuCijenu() {
+  let ukupno = 0;
+  const artikliUKorpi = document.querySelectorAll(".korpa-artikal");
+
+  artikliUKorpi.forEach((artikal) => {
+    const cijenaTekst = artikal.querySelector("p:last-child").textContent;
+    const cijenaBroj = parseFloat(cijenaTekst.replace(" KM", ""));
+    ukupno += cijenaBroj;
+  });
+
+  let ukupnoElement = document.getElementById("korpa-ukupno");
+  if (!ukupnoElement) {
+    ukupnoElement = document.createElement("div");
+    ukupnoElement.id = "korpa-ukupno";
+    ukupnoElement.style.fontWeight = "bold";
+    ukupnoElement.style.marginTop = "15px";
+    ukupnoElement.style.textAlign = "right";
+    const kontejner = document.querySelector(".popup-kupi-sadrzaj");
+    if (kontejner) kontejner.appendChild(ukupnoElement);
+  }
+  ukupnoElement.innerHTML = `Ukupno za platiti: <span style="color: #007BFF;">${ukupno} KM</span>`;
+}
+
+document.querySelectorAll(".kupi").forEach((dugme) => {
+  dugme.addEventListener("click", azurirajUkupnuCijenu);
+});
+document.addEventListener("click", function (e) {
+  if (e.target && e.target.classList.contains("dugme-ukloni")) {
+    setTimeout(azurirajUkupnuCijenu, 10);
+  }
+});
