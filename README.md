@@ -5,7 +5,7 @@ Tema: Stranica za prodaju i preporuku PC komponenti
 
 -Članovi grupe:
 Danis Kurtić - @danis-kurtic(danis.kurtic)
-Ervin Rešidović - ?
+Ervin Rešidović - @ervin-r187(ervin.residovic)
 Damir Pijuk - @Dambaa1123(Damir P.)
 
 -Danis: HTML
