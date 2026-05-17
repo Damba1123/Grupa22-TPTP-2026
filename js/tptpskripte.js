@@ -110,80 +110,113 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // --- DIO ZA FILTRIRANJE  ---
-
-// --- KONTAKT FORMA VALIDACIJA ) ---
-
+//  KONTAKT FORMA VALIDACIJA (Samo za kontakt.html)
 const kontaktForma = document.getElementById("kontakt-forma");
 
 if (kontaktForma) {
+  // Kada se klikne na dugme za resetovanje, brisu se sve greske i poruka uspjeha
+  kontaktForma.addEventListener("reset", function () {
+    document.querySelectorAll(".input-greska").forEach((el) => el.classList.remove("input-greska"));
+    document.querySelectorAll(".greska").forEach((el) => (el.textContent = ""));
+    
+    const uspjehPoruka = document.getElementById("uspjeh-poruka");
+    if (uspjehPoruka) {
+      uspjehPoruka.classList.remove("vidljivo");
+      uspjehPoruka.innerHTML = "";
+    }
+  });
+
+  // Kada korisnik pokusa poslati formu
   kontaktForma.addEventListener("submit", function (e) {
-    // 1. Spriječi automatsko slanje forme
+    // Sprijeci automatsko osvezavanje stranice
     e.preventDefault();
 
-    // 2. Dohvati elemente
+    // Hvatanje svih elemenata iz HTML-a
     const ime = document.getElementById("ime");
     const prezime = document.getElementById("prezime");
     const email = document.getElementById("email");
+    const telefon = document.getElementById("telefon");
+    const razlog = document.getElementById("razlog");
     const poruka = document.getElementById("poruka");
     const uspjehPoruka = document.getElementById("uspjeh-poruka");
 
+    // Brojac gresaka (na pocetku je nula)
     let greske = 0;
 
-    // Resetuj prethodne stilove i poruke
-    resetujGreske();
+    // Ocisti sve prethodne crvene greske prije nove provjere
+    document.querySelectorAll(".input-greska").forEach((el) => el.classList.remove("input-greska"));
+    document.querySelectorAll(".greska").forEach((el) => (el.textContent = ""));
+    if (uspjehPoruka) {
+      uspjehPoruka.classList.remove("vidljivo");
+    }
 
-    // 3. Validacija IMENA
-    if (ime.value.trim().length < 2) {
-      prikaziGresku("ime", "Ime je prekratko.");
+    // 1. Validacija imena (mora imati bar 2 znaka)
+    if (ime && ime.value.trim().length < 2) {
+      ime.classList.add("input-greska");
+      const greskaSpan = document.getElementById("greska-ime");
+      if (greskaSpan) greskaSpan.textContent = "Ime je prekratko.";
       greske++;
     }
 
-    // 4. Validacija PREZIMENA
-    if (prezime.value.trim().length < 2) {
-      prikaziGresku("prezime", "Prezime je prekratko.");
+    // 2. Validacija prezimena (mora imati bar 2 znaka)
+    if (prezime && prezime.value.trim().length < 2) {
+      prezime.classList.add("input-greska");
+      const greskaSpan = document.getElementById("greska-prezime");
+      if (greskaSpan) greskaSpan.textContent = "Prezime je prekratko.";
       greske++;
     }
 
-    // 5. REGEX Validacija EMAILA 
+    // 3. Validacija email adrese pomocu Regex-a
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value)) {
-      prikaziGresku("email", "Unesite ispravnu email adresu.");
+    if (email && !emailPattern.test(email.value.trim())) {
+      email.classList.add("input-greska");
+      const greskaSpan = document.getElementById("greska-email");
+      if (greskaSpan) greskaSpan.textContent = "Unesite ispravnu email adresu.";
       greske++;
     }
 
-    // 6. Validacija PORUKE
-    if (poruka.value.trim().length < 10) {
-      prikaziGresku("poruka", "Poruka mora imati barem 10 znakova.");
+    // 4. Validacija telefona pomocu Regex-a (dozvoljava samo brojeve i crtice, od 6 do 15 znakova)
+    const telefonPattern = /^[0-9\-]{6,15}$/;
+    if (telefon && !telefonPattern.test(telefon.value.trim())) {
+      telefon.classList.add("input-greska");
+      const greskaSpan = document.getElementById("greska-telefon");
+      if (greskaSpan) greskaSpan.textContent = "Unesite ispravan broj telefona.";
       greske++;
     }
 
-    // 7. Ako nema grešaka, prikaži personalizovanu poruku
-    if (greske === 0) {
+    // 5. Validacija dropdown menija (da li je izabran razlog upita)
+    if (razlog && razlog.value === "") {
+      razlog.classList.add("input-greska");
+      const greskaSpan = document.getElementById("greska-razlog");
+      if (greskaSpan) greskaSpan.textContent = "Morate odabrati razlog upita.";
+      greske++;
+    }
+
+    // 6. Validacija poruke (mora imati bar 10 znakova)
+    if (poruka && poruka.value.trim().length < 10) {
+      poruka.classList.add("input-greska");
+      const greskaSpan = document.getElementById("greska-poruka");
+      if (greskaSpan) greskaSpan.textContent = "Poruka mora imati barem 10 znakova.";
+      greske++;
+    }
+
+    // Ako nema nijedne greske, ispisi zelenu poruku uspjeha i rucno isprazni polja
+    if (greske === 0 && uspjehPoruka) {
+      // Upisivanje teksta poruke
+      uspjehPoruka.innerHTML = `Hvala Vam, <strong>${ime.value}</strong>! Vaš upit vezan za <strong>${razlog.options[razlog.selectedIndex].text}</strong> je uspješno poslan. Odgovorićemo Vam na <strong>${email.value}</strong> ubrzo.`;
+      
+      // Dodavanje klase .vidljivo (prikazivanje zelenog prozora preko CSS-a)
       uspjehPoruka.classList.add("vidljivo");
-      uspjehPoruka.innerHTML = `Hvala Vam, <strong>${ime.value}</strong>! Vaš upit je uspješno poslan. Odgovorićemo Vam na <strong>${email.value}</strong> ubrzo.`;
-      kontaktForma.reset(); // Isprazni formu
+      
+      // Rucno praznjenje unosa kako bi zelena poruka ostala vidljiva na ekranu
+      ime.value = "";
+      prezime.value = "";
+      email.value = "";
+      telefon.value = "";
+      razlog.value = "";
+      poruka.value = "";
     }
   });
-}
-
-// Pomoćna funkcija za prikazivanje crvenog bordera i teksta greške
-function prikaziGresku(id, tekst) {
-  const el = document.getElementById(id);
-  el.classList.add("input-greska"); // Dodaje crveni border iz CSS-a
-  const greskaSpan = document.getElementById(`greska-${id}`);
-  if (greskaSpan) {
-    greskaSpan.textContent = tekst;
-  }
-}
-
-// Funkcija za čišćenje grešaka pri ponovnom kliku
-function resetujGreske() {
-  document
-    .querySelectorAll(".input-greska")
-    .forEach((el) => el.classList.remove("input-greska"));
-  document.querySelectorAll(".greska").forEach((el) => (el.textContent = ""));
-  const uspjeh = document.getElementById("uspjeh-poruka");
-  if (uspjeh) uspjeh.style.display = "none";
 }
 
 // --- KONTAKT FORMA VALIDACIJA ) ---

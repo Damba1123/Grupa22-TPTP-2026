@@ -49,39 +49,59 @@
         <section class="kontakt-kartica">
           <h2>KONTAKTIRAJTE NAS</h2>
           <form id="kontakt-forma" novalidate>
-            <div class="forma-red">
-              <div class="polje-grupa">
-                <label for="ime">Ime</label>
-                <input type="text" id="ime" placeholder="Vaše ime" />
-                <span class="greska" id="greska-ime"></span>
-              </div>
-              <div class="polje-grupa">
-                <label for="prezime">Prezime</label>
-                <input type="text" id="prezime" placeholder="Vaše prezime" />
-                <span class="greska" id="greska-prezime"></span>
-              </div>
-            </div>
+  <div class="forma-red">
+    <div class="polje-grupa">
+      <label for="ime">Ime</label>
+      <input type="text" id="ime" placeholder="Vaše ime" />
+      <span class="greska" id="greska-ime"></span>
+    </div>
+    <div class="polje-grupa">
+      <label for="prezime">Prezime</label>
+      <input type="text" id="prezime" placeholder="Vaše prezime" />
+      <span class="greska" id="greska-prezime"></span>
+    </div>
+  </div>
 
-            <div class="polje-grupa">
-              <label for="email">Email adresa</label>
-              <input type="email" id="email" placeholder="ime@example.com" />
-              <span class="greska" id="greska-email"></span>
-            </div>
+  <div class="forma-red">
+    <div class="polje-grupa">
+      <label for="email">Email adresa</label>
+      <input type="email" id="email" placeholder="ime@example.com" />
+      <span class="greska" id="greska-email"></span>
+    </div>
+    <div class="polje-grupa">
+      <label for="telefon">Broj telefona</label>
+      <input type="tel" id="telefon" placeholder="061123456" />
+      <span class="greska" id="greska-telefon"></span>
+    </div>
+  </div>
 
-            <div class="polje-grupa">
-              <label for="poruka">Vaša poruka</label>
-              <textarea
-                id="poruka"
-                rows="4"
-                placeholder="Kako vam možemo pomoći?"
-              ></textarea>
-              <span class="greska" id="greska-poruka"></span>
-            </div>
+  <div class="polje-grupa">
+    <label for="razlog">Razlog upita</label>
+    <select id="razlog">
+      <option value="">-- Odaberite razlog --</option>
+      <option value="podrska">Tehnička podrška</option>
+      <option value="kupovina">Upit o kupovini / Ponuda</option>
+      <option value="reklamacija">Reklamacija</option>
+      <option value="ostalo">Ostalo</option>
+    </select>
+    <span class="greska" id="greska-razlog"></span>
+  </div>
 
-            <button type="submit" class="forma-submit-btn">
-              POŠALJI PORUKU
-            </button>
-          </form>
+  <div class="polje-grupa">
+    <label for="poruka">Vaša poruka</label>
+    <textarea
+      id="poruka"
+      rows="4"
+      placeholder="Kako vam možemo pomoći?"
+    ></textarea>
+    <span class="greska" id="greska-poruka"></span>
+  </div>
+
+  <div class="forma-red">
+    <button type="submit" class="forma-submit-btn">POŠALJI PORUKU</button>
+    <button type="reset" id="reset-btn" class="forma-submit-btn" style="background-color: #475569;">RESETUJ</button>
+  </div>
+</form>
           <div id="uspjeh-poruka"></div>
         </section>
       </section>

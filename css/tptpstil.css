@@ -84,7 +84,8 @@ html {
   bottom: 10px;
   left: 50px;
   padding: 4.5px 100px;
-  border: 1px solid var(--pozadina);
+  border: 1px solid var(--border);
+  box-shadow: 0 0 40px var(--neon);
   border-radius: 10px;
   cursor: pointer;
   background-color: var(--sporedna);
@@ -458,9 +459,10 @@ header {
   letter-spacing: 1px;
 }
 
-/* Unosi (Input i Textarea) */
+/* Unosi padajuceg menija, textarea, select */
 .polje-grupa input,
-.polje-grupa textarea {
+.polje-grupa textarea,
+.polje-grupa select {
   background-color: var(--pozadina);
   border: 1px solid var(--kontakt-border);
   color: var(--tekst);
@@ -472,9 +474,10 @@ header {
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
-
+/* still padajuceg menija tokom klika */
 .polje-grupa input:focus,
-.polje-grupa textarea:focus {
+.polje-grupa textarea:focus,
+.polje-grupa select:focus {
   background-color: var(--popup);
   border-color: var(--sporedna);
   box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
@@ -517,17 +520,8 @@ header {
   background-color: rgba(255, 68, 68, 0.05) !important;
 }
 
-#uspjeh-poruka {
-  margin-top: 25px;
-  padding: 15px;
-  border-left: 5px solid #65d84e;
-  background: rgba(101, 216, 78, 0.1);
-  color: #65d84e;
-  font-family: "Andale Mono", monospace;
-  font-size: 14px;
-  border-radius: 4px;
-  animation: fadeIn 0.5s ease-in;
-}
+
+
 #info-tekst {
   font-size: 16px;
   color: var(--tekst);
@@ -539,7 +533,7 @@ header {
 }
 /* Polje za unos, uspjesno */
 #uspjeh-poruka {
-  display: none; /* Inicijalno sakriveno bez inline stila */
+  display: none; /* Inicijalno sakriveno */
   margin-top: 25px;
   padding: 15px;
   border-left: 5px solid #65d84e;
@@ -550,8 +544,8 @@ header {
   border-radius: 4px;
 }
 
-.vidljivo {
-  display: block !important;
+#uspjeh-poruka.vidljivo {
+  display: block;
 }
 
 /* STILIZIRANJE SADRZAJ STRANICE */
