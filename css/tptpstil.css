@@ -13,7 +13,7 @@
   --mapa-border: #00d4ff;
   --vrh: #00d4ff;
   --kontakt: #151b2e;
-  --neon:rgba(0, 213, 255, 0.288);
+  --neon: rgba(0, 213, 255, 0.288);
 }
 /* POCETAK, POZADINA */
 body {
@@ -1003,11 +1003,11 @@ body.light-theme {
   --header: #689bec;
   --tekst-hover: #ffffff;
   --kontakt-boja: #00d4ff;
-  --kontakt-border:#00d4ff;
+  --kontakt-border: #00d4ff;
   --mapa-border: #67c3d6;
   --vrh: #00d4ff;
   --kontakt: #fafafa;
-  --neon:rgba(9, 79, 97, 0.623);
+  --neon: rgba(9, 79, 97, 0.623);
 }
 
 .tema-btn {
