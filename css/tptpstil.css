@@ -1034,3 +1034,101 @@ body.light-theme {
 .tema-btn:active {
   transform: translateY(0);
 }
+/*  STILIZIRANJE FOOTER-A */
+.glavni-footer {
+  background-color: var(--kontakt); 
+  color: var(--tekst);
+  padding: 50px 20px 20px 20px;
+  margin-top: 80px; 
+  border-top: 3px solid var(--sporedna); 
+  box-shadow: 0 -10px 30px var(--neon); 
+}
+
+.footer-sadrzaj {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 40px;
+}
+
+.footer-kolona h3 {
+  color: var(--sporedna); 
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--kontakt-border);
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.footer-opis {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.footer-linkovi {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-linkovi li {
+  margin-bottom: 12px;
+}
+
+.footer-linkovi a {
+  color: var(--tekst);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Efekat prelaza mišem preko imena */
+.footer-linkovi a:hover {
+  color: #e1306c; 
+  transform: translateX(5px); 
+}
+
+.footer-kolona p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Copyright i Grupa na samom dnu */
+.footer-dno {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-dno .linija {
+  margin: 30px 0 20px 0;
+  background-color: var(--kontakt-border);
+}
+
+.footer-dno strong {
+  color: var(--sporedna); 
+}
+
+/* RESPONSIVE - Prilagođavanje za ekrane telefona */
+@media (max-width: 768px) {
+  .footer-sadrzaj {
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-kolona h3 {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 20px auto;
+  }
+  
+  .footer-linkovi a:hover {
+    transform: none; /
+  }
+}
