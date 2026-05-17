@@ -532,16 +532,14 @@ header {
   position: relative;
   display: flex;
   justify-content: center;
-  object-fit: contain;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
 }
 
 .pc-mapa-wrapper img {
-  width: 100;
-  height: 100;
+  width: 100%;
+  height: auto;
   width: 700px;
-  height: 700px;
   object-fit: contain;
   border: 5px solid var(--mapa-border);
   box-shadow: var(--mapa-border) 0px 20px 30px -10px;
@@ -757,7 +755,7 @@ header {
     width: 220px;
     font-size: 16px;
   }
-  /* NAMJESTA DA LIJEPO IZGLEDAJU DUGMAD I ARTIKLI */
+
   .glavni-dio {
     display: block;
     padding: 20px;
@@ -788,7 +786,6 @@ header {
 
   .pc-mapa-wrapper img {
     width: 450px;
-    height: 450px;
   }
 
   .opis-komponente img {
@@ -885,7 +882,6 @@ header {
 
   .pc-mapa-wrapper img {
     width: 275px;
-    height: 275px;
   }
 
   .opis-komponente h2 {
