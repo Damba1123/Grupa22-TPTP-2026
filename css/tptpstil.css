@@ -13,6 +13,7 @@
   --mapa-border: #00d4ff;
   --vrh: #00d4ff;
   --kontakt: #151b2e;
+  --neon:rgba(0, 213, 255, 0.288);
 }
 /* POCETAK, POZADINA */
 body {
@@ -41,14 +42,15 @@ body {
 .kartica {
   position: relative;
   height: 350px;
-  border: 3px solid var(--border);
+  border: 3px solid var(--sporedna);
   border-radius: 15px;
   padding: 30px;
-  background-color: var(--sporedna);
+  background-color: var(--pozadina);
   overflow: hidden;
   object-fit: contain;
   transition: transform 0.22s ease-in-out;
   background-color: 0.4s ease;
+  box-shadow: 0 0 40px var(--neon);
 }
 
 .kartica img {
@@ -77,7 +79,7 @@ body {
   border: 1px solid var(--pozadina);
   border-radius: 10px;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: var(--sporedna);
   color: rgb(0, 0, 0);
   transition:
     transform 0.3s ease,
@@ -381,7 +383,7 @@ header {
   padding: 35px;
   width: 100%;
   max-width: 550px;
-  box-shadow: 0 0 25px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 40px var(--neon);
   position: relative;
 }
 
@@ -945,21 +947,22 @@ header {
 
 /* SVJETLA TEMA, AKTIVARANA PREKO JS */
 body.light-theme {
-  --pozadina: #dde2e7;
-  --tekst: #0f172a;
+  --pozadina: #ffffff;
+  --tekst: #000000;
   --popup: #ffffff;
-  --sporedna: #e2e6ea;
-  --akcent: #818694;
+  --sporedna: #00d4ff;
+  --akcent: #00d4ff;
   --border: #00d4ff; /* obični border */
-  --asd: #78889e; /* jači border */
-  --k-hover: #cbd5e1; /* horizontalne linije */
-  --header: #95a2b3;
+  --asd: #8ab2eb62; /* jači border */
+  --k-hover: #a5b4e6; /* boja kartice tokom prelaska kursora*/
+  --header: #689bec;
   --tekst-hover: #ffffff;
-  --kontakt-boja: #57585a;
-  --kontakt-border: #18181833;
+  --kontakt-boja: #00d4ff;
+  --kontakt-border:#00d4ff;
   --mapa-border: #67c3d6;
-  --vrh: hsl(220, 2%, 35%);
-  --kontakt: #ebebeb;
+  --vrh: #00d4ff;
+  --kontakt: #fafafa;
+  --neon:rgba(9, 79, 97, 0.623);
 }
 
 .tema-btn {
