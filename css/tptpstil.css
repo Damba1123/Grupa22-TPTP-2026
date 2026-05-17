@@ -970,6 +970,12 @@ header {
     scale: 0.82;
   }
 }
+/*DIO ZA 3 ARTIKL STRANICE ZA VECE MONITORE*/
+@media (min-width: 1600px) {
+  .racunari {
+    grid-template-columns: repeat(3, 350px);
+  }
+}
 
 @keyframes fadeIn {
   from {
