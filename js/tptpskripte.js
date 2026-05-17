@@ -144,7 +144,7 @@ if (kontaktForma) {
       greske++;
     }
 
-    // 5. REGEX Validacija EMAILA
+    // 5. REGEX Validacija EMAILA 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email.value)) {
       prikaziGresku("email", "Unesite ispravnu email adresu.");
