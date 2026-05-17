@@ -21,6 +21,10 @@ body {
   font-family: "Andale Mono", monospace;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .glavni-dio {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -49,6 +53,10 @@ body {
   object-fit: contain;
   transition: transform 0.22s ease-in-out;
   background-color: 0.4s ease;
+}
+
+.kartica:nth-child(3n) {
+  border-color: var(--border);
 }
 
 .kartica img {
@@ -130,6 +138,17 @@ body {
   border: 2.5px solid var(--border);
   width: 600px;
   height: 350px;
+}
+
+.detalji-link {
+  color: var(--mapa-border);
+  font-size: 16px;
+  text-decoration: underline;
+  transition: 0.3s all;
+}
+
+.detalji-link:hover {
+  color: orange;
 }
 
 /* POPUP ZA KORPU */
@@ -265,6 +284,11 @@ header {
   color: #2563eb; /* Plavi akcent */
 }
 
+.logo::after {
+  content: ".";
+  color: var(--tekst);
+}
+
 .github-link {
   display: flex;
   align-items: center;
@@ -364,6 +388,22 @@ header {
   font-weight: bold;
   text-transform: uppercase;
   background: var(--akcent);
+}
+
+.video-sekcija {
+  margin: 25px auto 35px auto;
+  padding: 10px;
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+}
+
+.video-sekcija iframe {
+  display: block;
+  width: 100%;
+  height: 160px;
+  margin: 0 auto;
+  border: 2px solid var(--sporedna);
 }
 
 /* STILIZIRANJE KONTAKT FORME */
@@ -875,6 +915,11 @@ header {
     z-index: 4000;
     scale: 0.75;
   }
+
+  .video-sekcija {
+    scale: 0.85;
+  }
+
   #info-tekst {
     display: block;
     text-align: center;
